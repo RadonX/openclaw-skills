@@ -1,116 +1,100 @@
 ---
 name: handoff
-description: Create temporary handoff docs and propose/apply permanent knowledge updates in a shared Obsidian vault.
+description: Create a temporary handoff doc (and optional work log) in a shared Obsidian vault. Use when you need to transfer session state to a future human/agent, or when the user says "handoff", "交接", "接手", "handover".
+compatibility: OpenClaw. Writes to /Users/ruonan/.openclaw/shared/ (Obsidian vault).
 metadata:
-  {
-    "openclaw": {
-      "emoji": "🧷"
-    }
-  }
+  author: RadonX
+  version: "1.1"
+  openclaw:
+    emoji: "🧷"
 ---
 
-# Handoff (shared)
+# handoff
 
-Create **temporary** handoff documents and (optionally) propose/apply updates to **permanent** docs.
+This skill turns a chat session into **handoff documentation** stored in a shared Obsidian vault.
 
-## Shared vault layout
+Two doc types:
 
-Root: `/Users/ruonan/.openclaw/shared/` (Obsidian vault)
+- **Temporary handoff** (primary): state transfer for the *next* person/agent.
+- **Work log** (optional): detailed actions/commands/files touched.
 
-- Temporary handoffs: `/Users/ruonan/.openclaw/shared/handoff/<project>/<YYYY-MM-DD>/...`
-- Permanent knowledge: `/Users/ruonan/.openclaw/shared/knowledge/<project>/...`
+## Vault layout (shared)
 
-## Invocation
+Root: `/Users/ruonan/.openclaw/shared/`
 
-This skill is usually invoked via slash command (Telegram nativeSkills):
+- Temporary: `shared/handoff/<project>/<YYYY-MM-DD>/...`
+- Permanent: `shared/knowledge/<project>/...`
 
-- `/handoff <project> [options]` (default mode)
-- `/handoff load <project> [--date YYYY-MM-DD]` (subcommand)
+## Supported commands (v1)
 
-If native skill commands are unavailable, use: `/skill handoff <input>`.
+This skill supports **exactly two** forms:
 
-## Supported forms (v1)
+1) **Default**
 
-This skill currently supports **only** two user-facing forms:
+- `/handoff <project> [--new|--update] [--log] [--name <base>]`
 
-1) **Default**: `/handoff <project> [options]`
-2) **Load**: `/handoff load <project> [--date YYYY-MM-DD]`
+2) **Load (reserved, not implemented yet)**
 
-### Subcommand parsing rules (must follow)
+- `/handoff load <project> [--date YYYY-MM-DD]`
 
-- Treat the first token after `/handoff` as either:
-  - a `<project>` (default mode), **or**
-  - the literal subcommand `load`.
-- Only `load` is supported as a subcommand in v1.
-- Any other token that looks like a subcommand (e.g. `integrity`, `list`, `help`, `:` variants) must be treated as **unsupported**. In that case:
-  1) explain it’s unsupported,
-  2) show the two supported forms above,
-  3) ask the user to restate.
+### Subcommand parsing rules (hard)
 
-### `/handoff load` behavior
+- Interpret the first token after `/handoff` as either:
+  - the literal subcommand `load`, or
+  - `<project>` (default mode).
+- Only `load` is recognized as a subcommand in v1.
+- Any other subcommand-like token (e.g. `integrity`, `list`, `help`, `handoff:load`) is **unsupported**.
+  - Explain it’s unsupported.
+  - Show the two supported forms.
+  - Ask the user to restate.
 
-Goal: help the user quickly locate the most relevant existing handoff doc for a project.
+### `/handoff load` current behavior (v1)
 
-When invoked as `/handoff load <project> [--date YYYY-MM-DD]`:
+`load` is **reserved for future subcommands**.
 
-1) Search under: `/Users/ruonan/.openclaw/shared/handoff/<project>/`
-2) Prefer checking an `INDEX.md` if present; otherwise search by recency.
-3) If `--date` is provided, narrow to that date folder first.
-4) Output:
-   - The best matching handoff path(s)
-   - A 3–8 bullet summary of what each file contains (read only)
-   - Ask whether to update an existing file or create a new one.
+For now, if the user invokes `/handoff load ...`, you MUST:
+- say that `load` is not implemented yet,
+- ask what they want to load (e.g. “find latest handoff? pick by date? show INDEX?”),
+- do **not** write or edit any files.
 
-No file writes in `load` mode unless the user explicitly asks to update/create.
+(We will implement the actual lookup logic in a later revision.)
 
-## Inputs (suggested schema)
+## Safety + correctness rules (must follow)
 
-When the user provides options, interpret them like:
-
-- `--new` force creating a new handoff file
-- `--update` prefer updating an existing relevant handoff file
-- `--log` also generate a matching `_work_log.md`
-- `--name <name>` optional short name ("slug") for the file base name
-- `--permanent <target_doc_path>` permanent-doc mode (ONLY propose updates unless `--apply`)
-- `--apply` apply the proposed permanent-doc patch (requires explicit user confirmation)
-
-If options are omitted:
-- default is to **search for a relevant existing handoff** for the same `<project>` and ask whether to update it or create a new one (default suggestion: update).
-
-## Critical principles (must follow)
-
-### Confirm before writing
+### 1) Confirm before writing
 Before **any** `write` or `edit`, you MUST:
-1) state the resolved absolute path(s) you intend to write, and
+1) print the resolved absolute output path(s), and
 2) ask the user to confirm.
 
-### Permanent docs: propose first
-In `--permanent` mode you MUST:
-- read the target doc if it exists,
-- analyze its existing style/purpose,
-- output a **PROPOSED PATCH** (clear section-level changes),
+### 2) Permanent docs: propose first
+If the user requests updating a permanent doc (`shared/knowledge/...` or another target):
+
+- Read the target doc if it exists.
+- Analyze its existing purpose/tone.
+- Produce a **PROPOSED PATCH**.
 - STOP and ask for explicit confirmation.
 
-Only after explicit confirmation AND `--apply` should you write/edit the file.
+Only after confirmation should you apply changes.
 
-### Focus of permanent docs
-Permanent docs should capture long-term maintainable knowledge:
-- architecture/procedures/debugging workflows
-- the evolution of understanding (wrong assumptions → what became clear)
+### 3) Don’t “invent state”
+When reporting status (tests, file creation, git state), do not claim something happened unless you verified it.
 
-### Temporary handoff doc requirements
-A handoff doc is meant to be discarded after use. It must include:
+## Output requirements
 
-1) Title: `Project Handoff: <project>`
-2) Header note: temporary/discard after use
-3) Key document links (permanent docs). If any new permanent docs were created in THIS session, link them here and explain each link in 1 sentence.
-4) Session Goal
-5) Work Done (concise)
-6) Current Status (artifact/knowledge state, not actions)
-7) Next Steps (actionable)
-8) If `--log` used: link to the work log file
+### Temporary handoff doc (required in default mode)
 
-Also include a YAML header for indexing:
+Must include:
+
+1) **Title**: `Project Handoff: <project>`
+2) **Header note**: temporary/discard-after-use
+3) **Key document links** (to permanent docs). For each link, add 1 sentence on why it matters.
+4) **Session goal**
+5) **Work done** (concise)
+6) **Current status** (artifact/knowledge state, not action list)
+7) **Next steps** (actionable)
+8) If `--log`: link to the work log file
+
+Must start with YAML for indexing:
 
 ```yaml
 ---
@@ -124,16 +108,14 @@ session: <sessionKey if available>
 ---
 ```
 
-### Work log document (only with --log)
-Work log is detailed and command-ish:
-- commands executed + key outputs
-- files read/modified + summary of changes
-- hypotheses/decisions/errors
-Avoid duplicating overview/goal/status/next steps from the handoff.
+### Work log doc (only with `--log`)
 
-## Implementation hints
+- Commands executed + key outputs
+- Files read/modified + summary
+- Hypotheses/decisions/errors
+- Avoid duplicating overview/goal/status/next steps
 
-- Prefer relative Obsidian-friendly links inside the vault when linking other vault docs.
-- Each project should keep: `/Users/ruonan/.openclaw/shared/handoff/<project>/INDEX.md` pointing to recent handoffs.
-- If no `<project>` exists yet, propose creating the project folder + INDEX.md and ask for confirmation before writing.
-- Ask the user if anything is unclear before proceeding when requirements are ambiguous.
+## Implementation notes
+
+- Keep `SKILL.md` focused; put long references in `references/` if needed.
+- Prefer Obsidian-friendly relative links inside `shared/`.
