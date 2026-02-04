@@ -50,14 +50,12 @@ This skill supports **exactly two** forms:
 
 ### `/handoff load` current behavior (v1)
 
-`load` is **reserved for future subcommands**.
+`load` is **instructions-only** in v1.
 
-For now, if the user invokes `/handoff load ...`, you MUST:
-- say that `load` is not implemented yet,
-- ask what they want to load (e.g. “find latest handoff? pick by date? show INDEX?”),
-- do **not** write or edit any files.
-
-(We will implement the actual lookup logic in a later revision.)
+- When the user invokes `/handoff load ...`, you MUST read and follow:
+  - `references/LOAD.md`
+- `load` is **read-only**: do not write/edit any files.
+- If the instructions are ambiguous for the user’s intent, ask a clarifying question.
 
 ## Safety + correctness rules (must follow)
 
