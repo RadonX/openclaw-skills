@@ -1,10 +1,10 @@
 ---
 name: handoff
-description: Create a temporary handoff doc (and optional work log) in a shared Obsidian vault. Use when you need to transfer session state to a future human/agent, or when the user says "handoff", "交接", "接手", "handover".
+description: Create handoff documentation (temporary state transfer + optional work log) in a shared Obsidian vault. Use when you need to hand work to a future human/agent, or when the user says "handoff", "交接", "接手", "handover".
 compatibility: OpenClaw. Uses the shared Obsidian vault at `~/.openclaw/shared/`.
 metadata:
   author: RadonX
-  version: "1.2"
+  version: "2.0"
   openclaw:
     emoji: "🧷"
 ---
@@ -16,64 +16,77 @@ This skill turns a chat session into **handoff documentation** stored in a share
 Doc types:
 
 - **Temporary handoff** (primary): state transfer for the *next* person/agent.
-- **Work log** (optional): detailed actions/commands/files touched.
-- **Permanent docs** (optional, guarded): long-term procedures / architecture / debugging playbooks.
+- **Work log** (optional): a detailed record of actions/commands/files touched.
+- **Knowledge docs** (optional): long-term procedures / architecture / debugging playbooks (guarded).
 
 ## Vault layout (shared)
 
 Root: `~/.openclaw/shared/`
 
 - Temporary: `shared/handoff/<project>/<YYYY-MM-DD>/...`
-- Permanent: `shared/knowledge/<project>/...`
+- Knowledge: `shared/knowledge/<project>/...`
 
-## Supported commands (v1)
+## Command interface (v2)
 
-This skill supports **exactly two user-facing forms**:
+This skill is intentionally designed like a small CLI:
 
-1) **Default**
+### A) Smart default (AI decides new vs update)
 
-- `/handoff <project> [--new|--update] [--log] [--name <base>] [--permanent <path>] [--apply]`
+```
+/handoff <project> [--log] [--name <base>] [--ask]
+```
 
-2) **Load (reserved, instructions-only)**
+Behavior:
 
-- `/handoff load <project> [--date YYYY-MM-DD]`
+- AI decides whether to **create a new** handoff or **update an existing** one.
+- AI should ask the user *only when it cannot make a high-confidence choice*.
 
-### Subcommand parsing rules (hard)
+### B) Subcommands
 
-- Interpret the first token after `/handoff` as either:
+```
+/handoff load <project> [--date YYYY-MM-DD]
+/handoff know <project> [--target <path>] [--apply] [--ask]
+```
+
+Notes:
+- `load` is **read-only** (navigation).
+- `know` is for **knowledge-base maintenance** (guarded, propose-first).
+
+### Parsing rules (hard)
+
+- The first token after `/handoff` is either:
+  - `<project>` (smart default), or
   - the literal subcommand `load`, or
-  - `<project>` (default mode).
-- Only `load` is recognized as a subcommand in v1.
-- Any other subcommand-like token (e.g. `integrity`, `list`, `help`, `handoff:load`) is **unsupported**.
-  - Explain it’s unsupported.
-  - Show the two supported forms.
-  - Ask the user to restate.
+  - the literal subcommand `know`.
+- Any other subcommand-like token is unsupported. Show usage and ask the user to restate.
 
-## Modes (default form)
+## Smart default decision policy (new vs update)
 
-### Default mode: temporary handoff
+Goal: minimize user interaction while staying correct.
 
-Goal: produce a *disposable* state-transfer doc for the next person.
+When invoked as `/handoff <project> ...`:
 
-- Prefer updating an existing relevant handoff file if one exists for the same project.
-- If multiple candidates exist, ask the user which file to update.
+1) Determine candidate existing handoffs for this project (read-only):
+   - Prefer `shared/handoff/<project>/INDEX.md` if present.
+   - Otherwise scan `shared/handoff/<project>/` for date folders, newest first.
 
-### `--log` mode: work log
+2) Choose **update** when there is a clear best existing target:
+   - If INDEX.md names a single "current" handoff → update that.
+   - Else if the newest date folder contains exactly one `*_handoff.md` → update that.
 
-Also generate a `*_work_log.md` file (same base name), containing a more detailed record of actions.
+3) Choose **new** when there is no suitable target.
 
-### `--permanent <path>` mode: permanent doc update (guarded)
+4) If multiple plausible update targets exist (ambiguity):
+   - If `--ask` is present: ask the user to pick.
+   - Otherwise: pick deterministically (newest `*_handoff.md` by mtime), and state the choice + rationale.
 
-Update **only** the specified permanent doc with key long-term insights.
+## `--ask` flag
 
-- If `<path>` is missing or ambiguous (e.g. user says “update the main doc”), propose likely doc paths and ask the user to confirm.
-- Focus on:
-  - procedures / architecture / debugging strategy
-  - the evolution of understanding (wrong assumptions → what became clear)
+`--ask` forces interactive confirmation (more prompts, more safety).
 
-`--apply` is required to actually write changes.
+Without `--ask`, the skill should keep interaction minimal **but must still be explicit** about what it is going to write.
 
-## `/handoff load` behavior (instructions-only, no implementation)
+## `/handoff load` (instructions-only, no implementation)
 
 When the user invokes `/handoff load ...`, you MUST read and follow:
 
@@ -81,50 +94,77 @@ When the user invokes `/handoff load ...`, you MUST read and follow:
 
 Hard rule: **read-only** (do not write/edit any files).
 
-## Safety + correctness rules (must follow)
+## `/handoff know` (knowledge-base maintenance)
 
-### 1) Confirm before writing
+Purpose: maintain long-term docs under `shared/knowledge/<project>/`.
 
-Before **any** `write` or `edit`, you MUST:
-1) print the resolved absolute output path(s), and
-2) ask the user to confirm.
+This mode is inspired by the “permanent documentation” principles:
 
-### 2) Permanent docs: propose first
+- Capture procedures / architecture / debugging strategy.
+- Focus on evolution of understanding: wrong assumptions → what became clear.
 
-For any permanent doc creation/update:
+### Guardrails (must follow)
+
+- If the target doc path is ambiguous, propose candidates and ask for confirmation.
+- You MUST propose changes first (see below). Only apply with explicit confirmation and `--apply`.
+
+## Safety + correctness rules (Gemini handoff essentials)
+
+These are the distilled “non-negotiables” from the original Gemini handoff command.
+
+### 1) Handle ambiguous doc references
+
+If the user asks to update "the main doc" / "the triage doc" / similar ambiguous references:
+
+- Acknowledge ambiguity.
+- Propose the most likely file path(s).
+- Ask the user to confirm the target.
+
+### 2) Confirm before writing (minimal-interaction version)
+
+- Always print the resolved absolute output path(s) you intend to write.
+- If `--ask` is present, you MUST ask the user to confirm before writing.
+- If `--ask` is NOT present, you may proceed without a question **only when**:
+  - you are creating a new file (not overwriting), and
+  - you have printed the path(s) you will write.
+
+### 3) Knowledge docs: propose first (CRITICAL)
+
+Before creating/updating knowledge docs:
 
 - Read the target doc if it exists.
 - Analyze its existing purpose/tone.
 - Produce a **PROPOSED PATCH**.
 - STOP and ask for explicit confirmation.
 
-Only after confirmation (and `--apply`, if applicable) should you apply changes.
+Only after confirmation (and `--apply`) should you apply changes.
 
-### 3) Communicate documentation strategy
+### 4) Communicate documentation strategy
 
-If you move information from a temporary handoff into a permanent doc during this session:
-- explicitly say *what moved* and *which permanent doc now contains it*.
+If you move information from a temporary handoff into a knowledge doc:
 
-### 4) Don’t invent state
+- Explicitly state *what moved* and *where it now lives*.
 
-When reporting status (tests, file creation, git state), do not claim something happened unless you verified it.
+### 5) Don’t invent state
 
-## Output requirements
+Do not claim tests/file writes/git actions occurred unless verified.
 
-### Temporary handoff doc (required)
+## Output contracts
+
+### Temporary handoff doc (required in smart default mode)
 
 Must include:
 
-1) **Title**: `Project Handoff: <project>`
-2) **Header note**: temporary / discard-after-use
-3) **Key document links** (permanent docs). For each link, add 1 sentence on why it matters.
-4) **Session goal**
-5) **Work done** (concise)
-6) **Current status** (artifact/knowledge state, not action list)
-7) **Next steps** (actionable)
-8) If `--log`: link to the work log file
+1) Title: `Project Handoff: <project>`
+2) Header note: temporary / discard-after-use
+3) Key document links (knowledge docs). For each link, 1 sentence on utility.
+4) Session goal
+5) Work done (concise)
+6) Current status (artifact/knowledge state, not action list)
+7) Next steps (actionable)
+8) If `--log`: link to work log
 
-Must start with YAML for indexing:
+Must start with YAML:
 
 ```yaml
 ---
@@ -145,7 +185,14 @@ session: <sessionKey if available>
 - Hypotheses/decisions/errors
 - Avoid duplicating overview/goal/status/next steps
 
+## Optional: baseline README (propose-only)
+
+If you discover that a project lacks any permanent/knowledge docs, you may propose creating a baseline README under `shared/knowledge/<project>/README.md` (title, overview, key components, key config points, maintenance tips).
+
+Do **not** write it without explicit user approval.
+
 ## Implementation notes
 
-- Keep `SKILL.md` focused; put long references in `references/`.
+- Keep SKILL.md focused; put long references in `references/`.
 - Prefer Obsidian-friendly relative links inside `shared/`.
+- Keep subcommands orthogonal; do not introduce new mode-switching flags.
