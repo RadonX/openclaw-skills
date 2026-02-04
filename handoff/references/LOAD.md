@@ -21,7 +21,7 @@ Provide a fast, safe way to *locate* the most relevant existing handoff doc(s) f
 
 ## Search locations
 
-Vault root: `/Users/ruonan/.openclaw/shared/`
+Vault root: `~/.openclaw/shared/`
 
 Search in this order:
 
@@ -51,9 +51,9 @@ Return:
 
 ## Minimal example response
 
-- Best match: `/Users/ruonan/.openclaw/shared/handoff/foo/2026-02-04/bar_handoff.md`
+- Best match: `~/.openclaw/shared/handoff/foo/2026-02-04/bar_handoff.md`
 - Also relevant:
-  - `/Users/ruonan/.openclaw/shared/handoff/foo/2026-02-03/baz_handoff.md`
+  - `~/.openclaw/shared/handoff/foo/2026-02-03/baz_handoff.md`
 
 Summary (bar_handoff.md):
 - ...
