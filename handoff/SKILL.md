@@ -28,13 +28,15 @@ Smart default:
 
 Subcommands:
 
-- `/handoff load <project> [--date YYYY-MM-DD]` (read-only)
+- `/handoff help`
+- `/handoff load <project> [--date YYYY-MM-DD] [--max-docs N]` (read-only)
 - `/handoff know <project> [--target <path>] [--apply] [--ask]`
 
 ## Parsing rules (hard)
 
 - First token after `/handoff` is either:
   - `<project>` (smart default), or
+  - `help`, or
   - `load`, or
   - `know`.
 - Any other subcommand-like token is unsupported. Show usage and ask the user to restate.
@@ -43,6 +45,7 @@ Subcommands:
 
 - Always follow: `references/PRINCIPLES.md`.
 - If invoked as `/handoff <project> ...`: read `references/DEFAULT.md`.
+- If invoked as `/handoff help`: read `references/HELP.md`.
 - If invoked as `/handoff load ...`: read `references/LOAD.md`.
 - If invoked as `/handoff know ...`: read `references/KNOW.md`.
 
