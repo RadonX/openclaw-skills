@@ -1,62 +1,108 @@
-# `/handoff load` (spec / instructions)
-
-Status: **instructions-only**. Do not implement new behaviors beyond reading + reporting.
+# `/handoff load` (prime session context)
 
 ## Goal
 
-Provide a fast, safe way to *locate* the most relevant existing handoff doc(s) for a project.
+Load a handoff document and **prime the current session** by reading any relevant supporting docs.
 
-- This is an **on-demand navigation** helper.
-- It should be usable in chat: user asks for context, you point them to the right handoff file.
-- It must not create noise or mutate state.
+In OpenClaw terms: this means using `read`/`web_fetch` (when appropriate) to pull in the handoff + linked knowledge/playbooks so you can work immediately without asking the user to paste context.
 
 ## Command form
 
 ```
-/handoff load <project> [--date YYYY-MM-DD]
+/handoff load <arg> [--date YYYY-MM-DD] [--max-docs N]
 ```
 
-- `<project>` maps to the folder: `shared/handoff/<project>/`
-- `--date` narrows to `shared/handoff/<project>/<YYYY-MM-DD>/`
+Where `<arg>` is either:
 
-## Search locations
+- a **handoff path** (recommended when you already have one), e.g.
+  - `~/.openclaw/shared/handoff/foo/2026-02-04/bar_handoff.md`
+- a **project name** (fallback), e.g.
+  - `foo`
 
-Vault root: `~/.openclaw/shared/`
+`--date` only applies when `<arg>` is a project name.
 
-Search in this order:
-
-1) `shared/handoff/<project>/INDEX.md` (if present)
-2) `shared/handoff/<project>/<YYYY-MM-DD>/` (if `--date` provided)
-3) Recent date folders under `shared/handoff/<project>/` (descending by date)
-
-Within a date folder, prefer:
-
-- `*_handoff.md` over `*_work_log.md`
-- newest mtime as tie-breaker
-
-## Output format (what to reply)
-
-Return:
-
-1) **Best match**: absolute path to the best candidate handoff doc
-2) **Alternatives** (0–3): other likely relevant handoff docs
-3) For each file: a **3–8 bullet** summary based on reading the doc (read-only)
-4) A question: "Do you want to update this existing handoff or create a new one?"
-
-## Hard constraints
+## Hard constraints (safety)
 
 - **Read-only**: never `write` or `edit` in `load` mode.
-- If the project folder does not exist, say so and ask whether to create a new handoff instead.
-- If multiple files are plausible, ask a clarifying question rather than guessing.
+- Do not claim something was loaded unless you actually read it.
+- Keep context proportional: stop after a reasonable number of docs.
 
-## Minimal example response
+## Step-by-step behavior
 
-- Best match: `~/.openclaw/shared/handoff/foo/2026-02-04/bar_handoff.md`
-- Also relevant:
-  - `~/.openclaw/shared/handoff/foo/2026-02-03/baz_handoff.md`
+### 1) Resolve the handoff file
 
-Summary (bar_handoff.md):
-- ...
-- ...
+Determine whether `<arg>` is a path or a project:
 
-Do you want to update `bar_handoff.md` or create a new handoff for today?
+- Treat `<arg>` as a **path** if it contains `/` or ends with `.md` or starts with `~`.
+  - Expand `~` to the home directory before reading.
+- Otherwise treat `<arg>` as a **project**.
+
+If `<arg>` is a project:
+
+1) Search under `~/.openclaw/shared/handoff/<project>/`.
+2) Prefer `INDEX.md` if present.
+3) If `--date` is provided, prefer `.../<YYYY-MM-DD>/`.
+4) Pick the best candidate `*_handoff.md` (prefer over `*_work_log.md`).
+5) If multiple candidates remain and you cannot choose confidently, ask the user which one to load.
+
+### 2) Read and analyze the handoff
+
+Read the resolved handoff file and extract:
+
+- The session goal / current status / next steps
+- Keywords: project/system names, incident IDs, topics, commands
+- **All explicit links** to supporting docs (especially knowledge/playbooks)
+
+### 3) Load explicitly linked docs
+
+From the handoff content, collect doc references. Common OpenClaw-friendly forms:
+
+- Markdown links: `[text](relative/or/absolute/path.md)`
+- Backticked paths: `` `shared/knowledge/foo/playbook.md` ``
+- Plain absolute paths: `/.../something.md`
+- Vault-relative paths: `shared/knowledge/<project>/...`
+
+Resolution rules:
+
+- If a link starts with `shared/`, resolve relative to the vault root: `~/.openclaw/shared/<that path>`.
+- If a link is relative (no leading `/` and not starting with `shared/`), try:
+  1) relative to the handoff file’s directory, then
+  2) relative to `~/.openclaw/shared/`.
+
+For each resolved path:
+- `read` it.
+- Record a 1–2 line purpose summary.
+
+### 4) Infer and load related docs (intelligent step)
+
+If the handoff mentions a system or task but links are missing, proactively search *locally* for likely supporting docs.
+
+Suggested search scope (in priority order):
+
+1) `~/.openclaw/shared/knowledge/<project>/` (if it exists)
+2) `~/.openclaw/shared/knowledge/` (global)
+
+Search method:
+
+- Prefer light `rg`-style keyword search (if tool access allows).
+- Use extracted keywords (system names, component names, common terms like "routing", "cron", "telegram", etc.).
+
+Load at most `--max-docs` inferred docs (default 5). If too many match, present a shortlist and ask which to load.
+
+### 5) Present what’s now in context
+
+Reply with:
+
+- **Handoff loaded**: the handoff path
+- **Docs loaded**: list of every doc you read (paths/URLs), each with a 1-sentence relevance note
+- **Key extracted context**: 5–10 bullets (tasks, risks, next steps)
+- A question only if needed: e.g. "Which of these two playbooks should I follow?"
+
+## Defaults
+
+- `--max-docs` default: 5
+
+## Notes (OpenClaw adaptation)
+
+- In OpenClaw, “loading context” means reading these files **during this run** so the model can reference them immediately.
+- This mode is intentionally read-only; any updates should be done via `/handoff <project>` (temporary) or `/handoff know ...` (knowledge).
