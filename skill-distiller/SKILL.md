@@ -1,7 +1,7 @@
 ---
 name: skill-distiller
-description: Synthesizes a new OpenClaw skill by analyzing a conversation history, distilling principles from the interaction, and structuring the output according to best practices. Use when creating a new skill from a successful workflow.
-compatibility: OpenClaw with host git CLI access.
+description: Distill a repeatable OpenClaw skill from a successful conversation history. Use when you want to turn “we did this once successfully” into a reusable skill (SKILL.md + references/), capturing the corrections and the final accepted shape.
+compatibility: OpenClaw.
 metadata:
   author: RadonX
   version: "1.0"
@@ -11,42 +11,51 @@ metadata:
 
 # skill-distiller
 
-This meta-skill creates a new, robust OpenClaw skill by analyzing the conversation history of a task that was successfully completed. It synthesizes the skill from the lessons learned during the interaction.
+Create a new skill by *synthesizing from history* (not generating from vibes): identify the initial attempt, every user correction, and the final accepted artifact; then codify the underlying principles into a new skill with progressive disclosure.
 
 ## Interface
 
-```
-/skill-distiller <new-skill-name> [--session <sessionKey>] [--message-id-start <id>] [--message-id-end <id>] [--apply]
-```
+- `/skill-distiller help`
+- `/skill-distiller <new-skill-name> [--source context|session|paste] [--session <sessionKey>] [--range <start..end>] [--apply] [--ask]`
 
-- If session/message IDs are omitted, assume the current session's full history.
-- Without `--apply`, this skill outputs a proposed file tree and content for the new skill.
+Defaults:
+- `--source context`
+- Without `--apply`, output a PROPOSAL only (no writes).
+
+## Parsing rules (hard)
+
+- First token after `/skill-distiller` is either:
+  - `help`, or
+  - `<new-skill-name>`.
+- Any other subcommand-like token is unsupported → show help and ask the user to restate.
+
+## Which references to read (on-demand)
+
+- Always read: `references/PROCESS.md`, `references/OUTPUT_CONTRACT.md`, `references/SAFETY.md`.
+- If invoked as `/skill-distiller help`: read `references/HELP.md`.
+
+## Global guardrails
+
+- Prefer low interaction. Ask only when ambiguous or risky (use `--ask` to increase confirmations).
+- Never write files unless:
+  1) you printed the full proposed file tree + contents, and
+  2) the user explicitly requested applying (via `--apply` or an explicit “apply/write it”).
+- Keep docs path-sanitized: use `~` in generated skill docs.
 
 ## Workflow (must follow)
 
-1) **Always read `references/PRINCIPLES.md` first.** This is your constitution for creating good skills.
+1) **Collect the history** (depending on `--source`):
+   - `context`: use the current conversation context.
+   - `session`: use `sessions_history` on `--session` and optionally `--range`.
+   - `paste`: ask the user to paste the relevant transcript (and only the relevant part).
 
-2) **Gather conversation history.**
-   - Use `sessions_history` with the provided session key and message ID range.
+2) **Distill the evolution**:
+   - Initial state (first attempt) → what was wrong.
+   - Corrections (every constraint the user added; every “don’t do that”).
+   - Final success state (the accepted file tree / docs / config / behavior).
 
-3) **Analyze the conversation (Root Cause Analysis).**
-   - **Initial State:** Identify the first attempt at the task. Note its flaws and naive assumptions.
-   - **Corrections:** Pinpoint every instance where the user provided a correction, clarification, or new constraint. These are the most critical pieces of information.
-   - **Final State:** Locate the final, user-approved artifact (the skill, the config, etc.). This is the "ground truth" your synthesized skill must be able to produce directly.
+3) **Synthesize the new skill** per `references/OUTPUT_CONTRACT.md`.
 
-4) **Synthesize the new skill's prompt and structure.**
-   - **Abstract, don't copy:** Distill the *underlying principle* from each correction.
-   - **Follow `PRINCIPLES.md`:**
-     - Structure with progressive disclosure (`SKILL.md` as a router, details in `references/`).
-     - Design a CLI-like interface (subcommands > flags for modes).
-     - Bake in safety guardrails (confirm-before-write, propose-first).
-     - Create a human-friendly `README.md`.
+4) **Output a PROPOSAL** (tree + full contents for every file).
 
-5) **Propose the new skill.**
-   - Output the complete file tree for `<new-skill-name>/`.
-   - For each file, provide the full proposed content.
-
-6) **Apply the new skill (`--apply`).**
-   - Only after user confirmation, write the files to `~/repo/config/openclaw/skills/<new-skill-name>/`.
-   - After writing, `cd` into the repo and run `git add <new-skill-name>`.
-   - Ask the user for a commit message or propose one based on the conversation.
+5) **Apply only if requested** (see `references/SAFETY.md`).
