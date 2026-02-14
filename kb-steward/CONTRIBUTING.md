@@ -35,7 +35,7 @@ kb-steward/
 2. **Read-before-write**: always sample existing notes before writing new ones
 3. **Evolvable taxonomy**: new tags/fields OK if recorded in note + README registry
 4. **Minimal chat noise**: path-only replies; suggestions inside the note
-5. **Per-agent default**: KB root is `<workspace>/knowledge/claw-config/` by design
+5. **Per-agent default**: KB root is `<workspace>/knowledge/` by design
 
 ## Key files
 

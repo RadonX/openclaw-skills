@@ -2,7 +2,7 @@
 
 ## What it does
 - Maintains a per-agent Obsidian-style KB under:
-  - default: `<agent workspace>/knowledge/claw-config/`
+  - default: `<agent workspace>/knowledge/`
 - Auto-bootstraps folders + READMEs + templates (additive only)
 - Ingests links/snippets into the right place:
   - `10-Projects/` (tasks/projects)
