@@ -20,7 +20,7 @@ Steward an Obsidian-style knowledge base rooted under **this agent's workspace**
 - `/kb-steward bootstrap [--kb-root <path>] --apply` (explicit one-shot bootstrap)
 
 Defaults:
-- `kbRoot`: `<agent workspace>/knowledge/claw-config/`
+- `kbRoot`: `<agent workspace>/knowledge/`
 - `kind`: `project`
 - `--relate`: on
 - Low interaction: ask only when ambiguous or risky.
@@ -37,7 +37,7 @@ Defaults:
 
 - Always read: `references/WORKFLOW.md`, `references/SAFETY.md`
 - If `help`: `references/HELP.md`
-- If `add`: `references/INGEST.md`, `references/BOOTSTRAP.md`, `references/FRONTMATTER.md`, `references/SOURCES.md`
+- If `add`: `references/BOOTSTRAP.md`, `references/FRONTMATTER.md`, `references/SOURCES.md`
 - If `--relate`: `references/RELATEDNESS.md`
 - If `doctor/bootstrap`: `references/BOOTSTRAP.md`
 

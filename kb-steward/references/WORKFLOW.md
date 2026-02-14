@@ -1,7 +1,7 @@
 # Workflow (must follow)
 
 ## 1) Resolve kbRoot
-Default: `<agent workspace>/knowledge/claw-config/`
+Default: `<agent workspace>/knowledge/`
 Override: `--kb-root <path>`
 
 ## 2) Decide kind → folder

@@ -24,7 +24,7 @@ Per-agent Obsidian-style knowledge base manager for OpenClaw.
 ## Folder structure
 
 ```
-<agent workspace>/knowledge/claw-config/
+<agent workspace>/knowledge/
 ├── 00-Inbox/       # Unsorted items (triage later)
 ├── 10-Projects/    # Tasks, projects (task-as-a-file)
 ├── 20-Areas/       # Evergreen principles, constraints
@@ -38,7 +38,7 @@ Per-agent Obsidian-style knowledge base manager for OpenClaw.
 |--------|-------------|
 | `--kind` | `project` (default), `research`, or `area` |
 | `--title` | Override the note title |
-| `--kb-root` | Custom KB path (default: `<workspace>/knowledge/claw-config/`) |
+| `--kb-root` | Custom KB path (default: `<workspace>/knowledge/`) |
 | `--relate` | Link related notes (on by default) |
 | `--ask` | Force confirmation before writing |
 
