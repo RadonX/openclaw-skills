@@ -1,26 +1,26 @@
 ---
-name: kb-steward-companion
-description: Query and maintenance utilities for kb-steward managed Obsidian vaults. Use when: (1) Searching tasks by tags in 10-Projects/, (2) Updating project status in frontmatter, (3) Browsing tag taxonomy established by kb-steward, (4) Viewing projects by priority. This is a companion to kb-steward: kb-steward writes/ingests, this companion queries/maintains.
+name: kb-steward-tools
+description: Query and maintenance utilities for kb-steward managed Obsidian vaults. Use when: (1) Searching tasks by tags in 10-Projects/, (2) Updating project status in frontmatter, (3) Browsing tag taxonomy established by kb-steward, (4) Viewing projects by priority, (5) Deleting notes with backup. This is a toolset for kb-steward: kb-steward writes/ingests, these tools query/maintain.
 ---
 
-# KB Steward Companion
+# KB Steward Tools
 
 Query and maintenance tools for Obsidian vaults managed by `kb-steward`.
 
 ## Relationship to kb-steward
 
-**kb-steward** (primary): Ingests URLs/snippets into knowledge base with proper frontmatter and taxonomy.
+**kb-steward** (primary skill): Ingests URLs/snippets into knowledge base with proper frontmatter and taxonomy.
 
-**kb-steward-companion** (this skill): Provides utilities to query, update status, and browse the knowledge base.
+**kb-steward-tools** (this skill): Provides utilities to query, update status, and browse the knowledge base.
 
-Use `kb-steward` to add content; use this companion to maintain and query it.
+Use `kb-steward` to add content; use these tools to maintain and query it.
 
 ## Prerequisites
 
 Before using this skill, ensure `obsidian-cli` is installed. If not, follow `references/SETUP.md`.
 
 Your vault should follow the `kb-steward` folder structure:
-- `10-Projects/` - Task notes (queried by this companion)
+- `10-Projects/` - Task notes (queried by these tools)
 - `20-Areas/` - Durable principles
 - `30-Research/` - Analysis and notes
 
@@ -45,10 +45,11 @@ scripts/delete.sh <note-name> [--no-backup]
 
 ## Which references to read
 
-- Always read: `references/TAGS.md` (tag taxonomy matching kb-steward)
 - If user asks about frontmatter: read `references/FRONTMATTER.md`
 - If user asks about creating projects: read `references/PROJECT_TEMPLATE.md`
 - First-time setup: read `references/SETUP.md`
+
+Tags are discovered dynamically via `scripts/tags.sh` - no static reference needed.
 
 ## Global guardrails
 
@@ -61,7 +62,7 @@ scripts/delete.sh <note-name> [--no-backup]
 
 ## Tag categories (from kb-steward taxonomy)
 
-This companion uses the same tag hierarchy that `kb-steward` establishes:
+These tools use the same tag hierarchy that `kb-steward` establishes:
 
 - **area/**: Domain categories (integration, telegram, memory, model-serving, etc.)
 - **type/**: Task types (research, implementation, creation, done, etc.)
@@ -97,6 +98,18 @@ scripts/prio.sh P0
 scripts/prio.sh P1
 ```
 
+### Delete a note
+
+```bash
+# Delete with backup
+scripts/delete.sh "Project Name"
+
+# Delete without backup
+scripts/delete.sh "Project Name" --no-backup
+```
+
+The delete script creates a `.bak.md` backup before deletion.
+
 ## Frontmatter operations (via obsidian-cli)
 
 ```bash
@@ -124,13 +137,13 @@ No manual configuration needed if `obsidian-cli` is properly set up.
 
 ## Scope boundaries
 
-### This companion DOES:
+### These tools DO:
 - ✅ Query notes in `10-Projects/`
 - ✅ Update frontmatter (status, prio, tags)
 - ✅ Browse tag taxonomy
-- ✅ Provide maintenance utilities
+- ✅ Delete notes with backup
 
-### This companion does NOT:
+### These tools do NOT:
 - ❌ Ingest new URLs (use `kb-steward add`)
 - ❌ Create folders (use `kb-steward bootstrap`)
 - ❌ Bootstrap new vault (use `kb-steward bootstrap --apply`)
