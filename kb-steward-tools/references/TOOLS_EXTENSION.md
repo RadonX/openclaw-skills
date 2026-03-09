@@ -1,8 +1,8 @@
-# Directory Structure v2.0 - kb-steward-tools Integration
+# Directory Structure - kb-steward-tools Integration
 
 ## Extension of Core Specification
 
-This document extends `DIRECTORY_STRUCTURE_V2.md` with kb-steward-tools-specific behavior.
+This document extends `../kb-steward/references/DIRECTORY_STRUCTURE.md` with kb-steward-tools-specific behavior.
 
 ## Tool Operations
 
@@ -168,7 +168,7 @@ scripts/migrate-projects.sh --apply
 
 ## See Also
 
-- **Core specification**: `DIRECTORY_STRUCTURE_V2.md`
+- **Core specification**: `../kb-steward/references/DIRECTORY_STRUCTURE.md`
 - **Tool usage**: `SKILL.md`
 - **Frontmatter**: `references/FRONTMATTER.md`
 - **Project creation**: `scripts/create-project.sh`

@@ -37,9 +37,9 @@ Defaults:
 
 - Always read: `references/WORKFLOW.md`, `references/SAFETY.md`
 - If `help`: `references/HELP.md`
-- If `add`: `references/BOOTSTRAP.md`, `references/FRONTMATTER.md`, `references/SOURCES.md`, `references/DIRECTORY_STRUCTURE_V2.md`, `references/KB_STEWARD_V2_EXTENSION.md`
+- If `add`: `references/BOOTSTRAP.md`, `references/FRONTMATTER.md`, `references/SOURCES.md`, `references/DIRECTORY_STRUCTURE.md`, `references/KB_STEWARD_EXTENSION.md`
 - If `--relate`: `references/RELATEDNESS.md`
-- If `doctor/bootstrap`: `references/BOOTSTRAP.md`, `references/DIRECTORY_STRUCTURE_V2.md`, `references/KB_STEWARD_V2_EXTENSION.md`
+- If `doctor/bootstrap`: `references/BOOTSTRAP.md`, `references/DIRECTORY_STRUCTURE.md`, `references/KB_STEWARD_EXTENSION.md`
 
 ## Global guardrails
 

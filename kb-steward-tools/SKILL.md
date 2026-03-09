@@ -57,8 +57,8 @@ scripts/delete.sh <note-name> [--no-backup]
 ## Which references to read
 
 - If user asks about frontmatter: read `references/FRONTMATTER.md`
-- If user asks about directory structure: read `../kb-steward/references/DIRECTORY_STRUCTURE_V2.md`
-- If user asks about tool-specific operations: read `references/TOOLS_V2_EXTENSION.md`
+- If user asks about directory structure: read `../kb-steward/references/DIRECTORY_STRUCTURE.md`
+- If user asks about tool-specific operations: read `references/TOOLS_EXTENSION.md`
 - If user asks about creating projects: read `references/PROJECT_TEMPLATE.md`
 - First-time setup: read `references/SETUP.md`
 

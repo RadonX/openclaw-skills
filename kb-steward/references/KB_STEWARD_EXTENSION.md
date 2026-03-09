@@ -1,8 +1,8 @@
-# Directory Structure v2.0 - kb-steward Integration
+# Directory Structure - kb-steward Integration
 
 ## Extension of Core Specification
 
-This document extends `DIRECTORY_STRUCTURE_V2.md` with kb-steward-specific behavior.
+This document extends `DIRECTORY_STRUCTURE.md` with kb-steward-specific behavior.
 
 ## kb-steward Operations
 
@@ -139,7 +139,7 @@ When `add` is called, kb-steward implicitly runs auto-bootstrap:
 
 ## See Also
 
-- **Core specification**: `DIRECTORY_STRUCTURE_V2.md`
+- **Core specification**: `DIRECTORY_STRUCTURE.md`
 - **Frontmatter guide**: `references/FRONTMATTER.md`
 - **Bootstrap policy**: `references/BOOTSTRAP.md`
 - **Workflow**: `references/WORKFLOW.md`

@@ -1,8 +1,8 @@
-# Directory Structure v2.0 - Core Specification
+# Directory Structure - Core Specification
 
 ## Overview
 
-As of 2026-03-09, the `10-Projects/` directory has been restructured to support better organization with **status-based layering** and **project aggregation**.
+The `10-Projects/` directory uses **status-based layering** and **project aggregation** for better organization.
 
 ## Directory Structure
 
@@ -129,7 +129,7 @@ backlog → active → completed
 
 ## References
 
-- **kb-steward integration**: See your skill's specific extension document
-- **kb-steward-tools integration**: See your skill's specific extension document
+- **kb-steward integration**: See `KB_STEWARD_EXTENSION.md`
+- **kb-steward-tools integration**: See `../kb-steward-tools/references/TOOLS_EXTENSION.md`
 - **Project management**: `kb/knowledge/project-management.md`
 - **Frontmatter guide**: `references/FRONTMATTER.md`
