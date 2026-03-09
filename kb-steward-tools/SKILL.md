@@ -19,25 +19,36 @@ Use `kb-steward` to add content; use these tools to maintain and query it.
 
 Before using this skill, ensure `obsidian-cli` is installed. If not, follow `references/SETUP.md`.
 
-Your vault should follow the `kb-steward` folder structure:
-- `10-Projects/` - Task notes (queried by these tools)
+Your vault should follow the `kb-steward` folder structure (v2.0):
+- `10-Projects/🔄 active/` - Active projects (with tasks/ and references/)
+- `10-Projects/✅ completed/YYYY-MM/` - Completed projects (archived by month)
+- `10-Projects/💭 backlog/` - Backlog / idea pool
+- `10-Projects/📋 templates/` - Project and task templates
 - `20-Areas/` - Durable principles
 - `30-Research/` - Analysis and notes
+
+**⚠️ Directory Structure v2.0**: As of 2026-03-09, projects are now organized by status (active/completed/backlog) with each project having its own folder. See `references/DIRECTORY_STRUCTURE_V2.md` for details.
 
 ## Interface
 
 ```bash
 # Query tasks in 10-Projects/
-scripts/todo.sh [tag]
+scripts/todo.sh [tag] [--scope active|completed|backlog]
 
 # Browse tags (dynamically discovered from vault)
 scripts/tags.sh [category]
+
+# Create new project
+scripts/create-project.sh "Project Name" "area/category" [priority]
+
+# Create task in project
+scripts/create-task.sh "project-folder" "Task Name" "estimated" [priority]
 
 # Update project status
 scripts/status.sh <project> <status>
 
 # View projects by priority
-scripts/prio.sh [P0-P3]
+scripts/prio.sh [P0-P3] [--scope active|completed]
 
 # Delete a note (with backup)
 scripts/delete.sh <note-name> [--no-backup]
@@ -46,6 +57,7 @@ scripts/delete.sh <note-name> [--no-backup]
 ## Which references to read
 
 - If user asks about frontmatter: read `references/FRONTMATTER.md`
+- If user asks about directory structure: read `references/DIRECTORY_STRUCTURE_V2.md`
 - If user asks about creating projects: read `references/PROJECT_TEMPLATE.md`
 - First-time setup: read `references/SETUP.md`
 

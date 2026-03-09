@@ -37,9 +37,9 @@ Defaults:
 
 - Always read: `references/WORKFLOW.md`, `references/SAFETY.md`
 - If `help`: `references/HELP.md`
-- If `add`: `references/BOOTSTRAP.md`, `references/FRONTMATTER.md`, `references/SOURCES.md`
+- If `add`: `references/BOOTSTRAP.md`, `references/FRONTMATTER.md`, `references/SOURCES.md`, `references/DIRECTORY_STRUCTURE_V2.md`
 - If `--relate`: `references/RELATEDNESS.md`
-- If `doctor/bootstrap`: `references/BOOTSTRAP.md`
+- If `doctor/bootstrap`: `references/BOOTSTRAP.md`, `references/DIRECTORY_STRUCTURE_V2.md`
 
 ## Global guardrails
 
@@ -48,14 +48,16 @@ Defaults:
 3) **Taxonomy is evolvable:** allowed to introduce a new tag/field/subfolder only if recorded as a **Taxonomy decision** in the note and in the folder README registry.
 4) **Minimal chat noise:** reply with what changed + exact path(s). Put next-step suggestions inside the note/README.
 5) **Destructive ops:** avoid deletions; prefer `.bak` or ask first.
+6) **Directory structure v2.0:** When adding projects, follow the new layered structure (`🔄 active/`, `✅ completed/`, `💭 backlog/`). See `references/DIRECTORY_STRUCTURE_V2.md`.
 
 ## Output behavior
 
 - `add`:
   - resolves kbRoot
   - runs auto-bootstrap (add missing assets only)
+  - **NEW**: creates project folder in `10-Projects/🔄 active/` with `PROJECT.md`, `tasks/`, `references/`
   - ingests the source (URL/paste)
-  - writes one note
+  - writes one note (to `references/` if project folder exists)
   - optionally adds `related_docs`
-- `doctor`: produces a report only.
-- `bootstrap`: proposal first unless `--apply`.
+- `doctor`: produces a report only (checks for `PROJECT.md` in each project folder).
+- `bootstrap`: proposal first unless `--apply` (creates v2.0 directory structure).
