@@ -6,6 +6,8 @@
     git:
       commit: "8ca5314fed16b08073bcff4cd186872fa712e37b"
       subject: "feat(skills): add source-to-notes (dialogue export + optional distill)"
+    artifact:
+      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
 
 - id: D0002
   date: "2026-03-18"
@@ -15,11 +17,18 @@
     git:
       commit: "321a1c2e9db331c55ab3393a89e7cabab4497c0c"
       subject: "skills: add meta.yaml + conventions"
-    session:
-      topic_id: "1010"
-      message_id: "3023"
-      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
-      timestamp: "2026-03-18T08:45:58.282000+00:00"
+    artifact:
+      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+    excerpt:
+      - "先commit meta.yaml then 补 decision"
+      - "主要是 decision log，还有每个 skill 生成或者变更的时使用的模型。然后我 prefer YAML。"
+    summary: "Introduce per-skill meta.yaml and repo conventions for metadata tracking."
+    inferred_models:
+      observed:
+        - "openai-codex/gpt-5.2"
+        - "gemini-local/gemini-2.5-pro"
+      possible:
+        - "gemini-local/gemini-2.5-flash"
 
 - id: D0003
   date: "2026-03-18"
@@ -29,11 +38,17 @@
     git:
       commit: "a3937f7a49ff7e0613085c16d679a48f1fe365bc"
       subject: "skills: add decisions.yaml stubs"
-    session:
-      topic_id: "1010"
-      message_id: "3023"
-      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
-      timestamp: "2026-03-18T08:45:58.282000+00:00"
+    artifact:
+      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+    excerpt:
+      - "先commit meta.yaml then 补 decision"
+    summary: "Add decisions.yaml files and establish decision logging baseline."
+    inferred_models:
+      observed:
+        - "openai-codex/gpt-5.2"
+        - "gemini-local/gemini-2.5-pro"
+      possible:
+        - "gemini-local/gemini-2.5-flash"
 
 - id: D0004
   date: "2026-03-18"
@@ -43,8 +58,11 @@
     git:
       commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
       subject: "skills: regenerate decisions.yaml from git history"
-    session:
-      topic_id: "1010"
-      message_id: "3027"
-      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
-      timestamp: "2026-03-18T08:48:26.720000+00:00"
+    artifact:
+      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+    excerpt:
+      - "当然要精确的。"
+    summary: "Regenerate decisions.yaml from git history for precision and traceability."
+    inferred_models:
+      observed:
+        - "gemini-local/gemini-2.5-pro"
