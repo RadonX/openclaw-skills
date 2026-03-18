@@ -1,0 +1,20 @@
+name: skill-distiller-gemini
+version: "0.1.0"
+status: stable
+owner: RadonX
+created: "2026-02-10"
+updated: "2026-02-10"
+
+description: 'Synthesizes a new OpenClaw skill by analyzing a conversation history, distilling principles from the interaction, and structuring the output according to best practices. Use when creating a new skill from a successful workflow.'
+
+contract:
+  - 'Distills a successful conversation history into a reusable OpenClaw skill.'
+  - 'Emphasizes extracting user corrections/constraints and the final accepted artifact.'
+  - 'Default is proposal-only; apply/write requires explicit user request.'
+  - 'Always consults principles reference before synthesis.'
+
+provenance:
+  created:
+    date: "2026-02-10"
+    model: 'gemini-2.5-pro'
+    method: "git history inference"

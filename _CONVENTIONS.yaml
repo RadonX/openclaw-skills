@@ -1,0 +1,38 @@
+# Skills metadata conventions (palimpsest-like)
+#
+# Goals:
+# - Track key decisions (decision log) and the model used to create/change a skill.
+# - Keep metadata machine-readable (YAML).
+
+files:
+  meta: meta.yaml
+  decisions: decisions.yaml
+
+meta_yaml:
+  required_keys:
+    - name
+    - version
+    - status
+    - owner
+    - created
+    - updated
+    - contract
+    - provenance
+
+  notes:
+    contract: "List of invariant constraints for the skill; minimal and stable."
+    provenance: "Records model + date used for creation/last significant change."
+
+decisions_yaml:
+  record_when: "Important interface/contract/behavior changes only."
+  entry_shape:
+    required_keys:
+      - id
+      - date
+      - model
+      - decision
+      - context
+    optional_keys:
+      - alternatives
+      - consequences
+      - links
