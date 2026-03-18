@@ -1,23 +1,55 @@
 - id: D0001
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Feat(commit-message): add Conventional Commit narrative helper skill"
-  context: "From git commit 7b3ac96: feat(commit-message): add Conventional Commit narrative helper skill"
-  links:
-    - "commit:7b3ac964966c964223d516756d0da484d25e8ab9"
+  decision: "feat(commit-message): add Conventional Commit narrative helper skill"
+  evidence:
+    git:
+      commit: "7b3ac964966c964223d516756d0da484d25e8ab9"
+      subject: "feat(commit-message): add Conventional Commit narrative helper skill"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
 
 - id: D0002
   date: "2026-03-18"
   model: "gemini-2.5-pro"
-  decision: "Create the skill skeleton and initial contract."
-  context: "From git commit 321a1c2: skills: add meta.yaml + conventions"
-  links:
-    - "commit:321a1c2e9db331c55ab3393a89e7cabab4497c0c"
+  decision: "skills: add meta.yaml + conventions"
+  evidence:
+    git:
+      commit: "321a1c2e9db331c55ab3393a89e7cabab4497c0c"
+      subject: "skills: add meta.yaml + conventions"
+    session:
+      topic_id: "1010"
+      message_id: "3023"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:45:58.282000+00:00"
 
 - id: D0003
   date: "2026-03-18"
   model: "gemini-2.5-pro"
-  decision: "Create the skill skeleton and initial contract."
-  context: "From git commit a3937f7: skills: add decisions.yaml stubs"
-  links:
-    - "commit:a3937f7a49ff7e0613085c16d679a48f1fe365bc"
+  decision: "skills: add decisions.yaml stubs"
+  evidence:
+    git:
+      commit: "a3937f7a49ff7e0613085c16d679a48f1fe365bc"
+      subject: "skills: add decisions.yaml stubs"
+    session:
+      topic_id: "1010"
+      message_id: "3023"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:45:58.282000+00:00"
+
+- id: D0004
+  date: "2026-03-18"
+  model: "gemini-2.5-pro"
+  decision: "skills: regenerate decisions.yaml from git history"
+  evidence:
+    git:
+      commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
+      subject: "skills: regenerate decisions.yaml from git history"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"

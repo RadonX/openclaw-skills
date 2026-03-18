@@ -2,78 +2,152 @@
   date: "2026-02-04"
   model: "gemini-2.5-pro"
   decision: "Initial skills repo (handoff)"
-  context: "From git commit fecdfea: Initial skills repo (handoff)"
-  links:
-    - "commit:fecdfea7183c5aa822ef3c1c1d8eb018adeaad2c"
+  evidence:
+    git:
+      commit: "fecdfea7183c5aa822ef3c1c1d8eb018adeaad2c"
+      subject: "Initial skills repo (handoff)"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
 
 - id: D0002
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Handoff: rewrite SKILL.md best practices + reserve subcommand load"
-  context: "From git commit ab735f1: handoff: rewrite SKILL.md best practices + reserve subcommand load"
-  links:
-    - "commit:ab735f1788adb3335a90d30eb1881c8e9259d382"
+  decision: "handoff: rewrite SKILL.md best practices + reserve subcommand load"
+  evidence:
+    git:
+      commit: "ab735f1788adb3335a90d30eb1881c8e9259d382"
+      subject: "handoff: rewrite SKILL.md best practices + reserve subcommand load"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
 
 - id: D0003
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Handoff: add on-demand load instructions (no implementation)"
-  context: "From git commit e038ce7: handoff: add on-demand load instructions (no implementation)"
-  links:
-    - "commit:e038ce7418fb9c7e02d2bb384795ec87c8d1a342"
+  decision: "handoff: add on-demand load instructions (no implementation)"
+  evidence:
+    git:
+      commit: "e038ce7418fb9c7e02d2bb384795ec87c8d1a342"
+      subject: "handoff: add on-demand load instructions (no implementation)"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
 
 - id: D0004
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Handoff: sanitize paths + restore key modes; reserve load subcommand"
-  context: "From git commit 7e4f94a: handoff: sanitize paths + restore key modes; reserve load subcommand"
-  links:
-    - "commit:7e4f94a818aeb5ebf749cafe587a94ca466bf819"
+  decision: "handoff: sanitize paths + restore key modes; reserve load subcommand"
+  evidence:
+    git:
+      commit: "7e4f94a818aeb5ebf749cafe587a94ca466bf819"
+      subject: "handoff: sanitize paths + restore key modes; reserve load subcommand"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
 
 - id: D0005
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Feat(handoff): adopt a subcommand-first CLI with smart new/update"
-  context: "From git commit bc5692f: feat(handoff): adopt a subcommand-first CLI with smart new/update"
-  links:
-    - "commit:bc5692f7c2f1c7072bff3d0c4d93c8985035ac4a"
+  decision: "feat(handoff): adopt a subcommand-first CLI with smart new/update"
+  evidence:
+    git:
+      commit: "bc5692f7c2f1c7072bff3d0c4d93c8985035ac4a"
+      subject: "feat(handoff): adopt a subcommand-first CLI with smart new/update"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
 
 - id: D0006
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Refactor(handoff): move mode details into references (keep SKILL.md lean)"
-  context: "From git commit 864c5d3: refactor(handoff): move mode details into references (keep SKILL.md lean)"
-  links:
-    - "commit:864c5d354fd27a11cbe4270b1ae099e3dd5765f1"
+  decision: "refactor(handoff): move mode details into references (keep SKILL.md lean)"
+  evidence:
+    git:
+      commit: "864c5d354fd27a11cbe4270b1ae099e3dd5765f1"
+      subject: "refactor(handoff): move mode details into references (keep SKILL.md lean)"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
 
 - id: D0007
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Feat(handoff): implement load as context primer (handoff + linked docs)"
-  context: "From git commit 71e78db: feat(handoff): implement load as context primer (handoff + linked docs)"
-  links:
-    - "commit:71e78db3caec58ca7174ec5877325319e7821224"
+  decision: "feat(handoff): implement load as context primer (handoff + linked docs)"
+  evidence:
+    git:
+      commit: "71e78db3caec58ca7174ec5877325319e7821224"
+      subject: "feat(handoff): implement load as context primer (handoff + linked docs)"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
 
 - id: D0008
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Refactor(handoff): streamline load + add help + human README"
-  context: "From git commit 905f0e5: refactor(handoff): streamline load + add help + human README"
-  links:
-    - "commit:905f0e57d1f054fbc27e2e053fd70b10b55c3b1a"
+  decision: "refactor(handoff): streamline load + add help + human README"
+  evidence:
+    git:
+      commit: "905f0e57d1f054fbc27e2e053fd70b10b55c3b1a"
+      subject: "refactor(handoff): streamline load + add help + human README"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
 
 - id: D0009
   date: "2026-03-18"
   model: "gemini-2.5-pro"
-  decision: "Create the skill skeleton and initial contract."
-  context: "From git commit 321a1c2: skills: add meta.yaml + conventions"
-  links:
-    - "commit:321a1c2e9db331c55ab3393a89e7cabab4497c0c"
+  decision: "skills: add meta.yaml + conventions"
+  evidence:
+    git:
+      commit: "321a1c2e9db331c55ab3393a89e7cabab4497c0c"
+      subject: "skills: add meta.yaml + conventions"
+    session:
+      topic_id: "1010"
+      message_id: "3023"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:45:58.282000+00:00"
 
 - id: D0010
   date: "2026-03-18"
   model: "gemini-2.5-pro"
-  decision: "Create the skill skeleton and initial contract."
-  context: "From git commit a3937f7: skills: add decisions.yaml stubs"
-  links:
-    - "commit:a3937f7a49ff7e0613085c16d679a48f1fe365bc"
+  decision: "skills: add decisions.yaml stubs"
+  evidence:
+    git:
+      commit: "a3937f7a49ff7e0613085c16d679a48f1fe365bc"
+      subject: "skills: add decisions.yaml stubs"
+    session:
+      topic_id: "1010"
+      message_id: "3023"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:45:58.282000+00:00"
+
+- id: D0011
+  date: "2026-03-18"
+  model: "gemini-2.5-pro"
+  decision: "skills: regenerate decisions.yaml from git history"
+  evidence:
+    git:
+      commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
+      subject: "skills: regenerate decisions.yaml from git history"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"

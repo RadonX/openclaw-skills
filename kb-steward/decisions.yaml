@@ -1,63 +1,100 @@
 - id: D0001
   date: "2026-02-11"
   model: "gemini-2.5-pro"
-  decision: "Feat(skills): add kb-steward — per-agent Obsidian KB manager"
-  context: "From git commit e01730b: feat(skills): add kb-steward — per-agent Obsidian KB manager"
-  links:
-    - "commit:e01730bc8bf3df28352af592310ea2e13ded667c"
+  decision: "feat(skills): add kb-steward — per-agent Obsidian KB manager"
+  evidence:
+    git:
+      commit: "e01730bc8bf3df28352af592310ea2e13ded667c"
+      subject: "feat(skills): add kb-steward — per-agent Obsidian KB manager"
 
 - id: D0002
   date: "2026-02-11"
   model: "gemini-2.5-pro"
-  decision: "Docs(kb-steward): add README and CONTRIBUTING"
-  context: "From git commit 51d184e: docs(kb-steward): add README and CONTRIBUTING"
-  links:
-    - "commit:51d184ef36561faa786c17711e1e8e3d1096a5b5"
+  decision: "docs(kb-steward): add README and CONTRIBUTING"
+  evidence:
+    git:
+      commit: "51d184ef36561faa786c17711e1e8e3d1096a5b5"
+      subject: "docs(kb-steward): add README and CONTRIBUTING"
 
 - id: D0003
   date: "2026-02-13"
   model: "gemini-2.5-pro"
-  decision: "Kb-steward: default kbRoot to <workspace>/knowledge"
-  context: "From git commit c93e44e: kb-steward: default kbRoot to <workspace>/knowledge"
-  links:
-    - "commit:c93e44e62b74f5e357e16abb7a8805d0201e87a7"
+  decision: "kb-steward: default kbRoot to <workspace>/knowledge"
+  evidence:
+    git:
+      commit: "c93e44e62b74f5e357e16abb7a8805d0201e87a7"
+      subject: "kb-steward: default kbRoot to <workspace>/knowledge"
 
 - id: D0004
   date: "2026-03-09"
   model: "gemini-2.5-pro"
-  decision: "Feat(kb-steward): support directory structure v2.0"
-  context: "From git commit f046a39: feat(kb-steward): support directory structure v2.0"
-  links:
-    - "commit:f046a3982ec0f53430a41f062948eafad3566197"
+  decision: "feat(kb-steward): support directory structure v2.0"
+  evidence:
+    git:
+      commit: "f046a3982ec0f53430a41f062948eafad3566197"
+      subject: "feat(kb-steward): support directory structure v2.0"
 
 - id: D0005
   date: "2026-03-09"
   model: "gemini-2.5-pro"
-  decision: "Refactor(kb-steward): deduplicate directory structure docs"
-  context: "From git commit 0e9f963: refactor(kb-steward): deduplicate directory structure docs"
-  links:
-    - "commit:0e9f963831085365b0924ba62707a446c047885d"
+  decision: "refactor(kb-steward): deduplicate directory structure docs"
+  evidence:
+    git:
+      commit: "0e9f963831085365b0924ba62707a446c047885d"
+      subject: "refactor(kb-steward): deduplicate directory structure docs"
 
 - id: D0006
   date: "2026-03-09"
   model: "gemini-2.5-pro"
-  decision: "Refactor(kb-steward): remove v2 suffix from directory structure docs"
-  context: "From git commit aa7dd3c: refactor(kb-steward): remove v2 suffix from directory structure docs"
-  links:
-    - "commit:aa7dd3c41299805dc8d15e74c5f3e6b80f736243"
+  decision: "refactor(kb-steward): remove v2 suffix from directory structure docs"
+  evidence:
+    git:
+      commit: "aa7dd3c41299805dc8d15e74c5f3e6b80f736243"
+      subject: "refactor(kb-steward): remove v2 suffix from directory structure docs"
+    session:
+      topic_id: "1010"
+      message_id: "3029"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:53:44.540000+00:00"
 
 - id: D0007
   date: "2026-03-18"
   model: "gemini-2.5-pro"
-  decision: "Create the skill skeleton and initial contract."
-  context: "From git commit 321a1c2: skills: add meta.yaml + conventions"
-  links:
-    - "commit:321a1c2e9db331c55ab3393a89e7cabab4497c0c"
+  decision: "skills: add meta.yaml + conventions"
+  evidence:
+    git:
+      commit: "321a1c2e9db331c55ab3393a89e7cabab4497c0c"
+      subject: "skills: add meta.yaml + conventions"
+    session:
+      topic_id: "1010"
+      message_id: "3023"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:45:58.282000+00:00"
 
 - id: D0008
   date: "2026-03-18"
   model: "gemini-2.5-pro"
-  decision: "Create the skill skeleton and initial contract."
-  context: "From git commit a3937f7: skills: add decisions.yaml stubs"
-  links:
-    - "commit:a3937f7a49ff7e0613085c16d679a48f1fe365bc"
+  decision: "skills: add decisions.yaml stubs"
+  evidence:
+    git:
+      commit: "a3937f7a49ff7e0613085c16d679a48f1fe365bc"
+      subject: "skills: add decisions.yaml stubs"
+    session:
+      topic_id: "1010"
+      message_id: "3023"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:45:58.282000+00:00"
+
+- id: D0009
+  date: "2026-03-18"
+  model: "gemini-2.5-pro"
+  decision: "skills: regenerate decisions.yaml from git history"
+  evidence:
+    git:
+      commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
+      subject: "skills: regenerate decisions.yaml from git history"
+    session:
+      topic_id: "1010"
+      message_id: "3027"
+      session_file: "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+      timestamp: "2026-03-18T08:48:26.720000+00:00"
