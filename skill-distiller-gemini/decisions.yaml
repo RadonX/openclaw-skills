@@ -7,7 +7,7 @@
       commit: "6e9b6ff97a123ba31091720922d2927a59ffc9d3"
       subject: "feat(skill-distiller): distill skills from history (archive gemini draft)"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/skill-distiller-gemini/context/2026-03-18_git-history.md"
 
 - id: D0002
   date: "2026-03-18"
@@ -18,7 +18,7 @@
       commit: "321a1c2e9db331c55ab3393a89e7cabab4497c0c"
       subject: "skills: add meta.yaml + conventions"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/skill-distiller-gemini/context/2026-03-18_git-history.md"
     excerpt:
       - "先commit meta.yaml then 补 decision"
       - "主要是 decision log，还有每个 skill 生成或者变更的时使用的模型。然后我 prefer YAML。"
@@ -39,7 +39,7 @@
       commit: "a3937f7a49ff7e0613085c16d679a48f1fe365bc"
       subject: "skills: add decisions.yaml stubs"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/skill-distiller-gemini/context/2026-03-18_git-history.md"
     excerpt:
       - "先commit meta.yaml then 补 decision"
     summary: "Add decisions.yaml files and establish decision logging baseline."
@@ -59,7 +59,7 @@
       commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
       subject: "skills: regenerate decisions.yaml from git history"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/skill-distiller-gemini/context/2026-03-18_git-history.md"
     excerpt:
       - "当然要精确的。"
     summary: "Regenerate decisions.yaml from git history for precision and traceability."

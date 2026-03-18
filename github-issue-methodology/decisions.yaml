@@ -7,7 +7,7 @@
       commit: "d03beb0dccf5b517e1b7c0d065fc70c6b7a5645c"
       subject: "Add skill: github-issue-methodology"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/github-issue-methodology/context/2026-03-18_git-history.md"
 
 - id: D0002
   date: "2026-03-02"
@@ -18,7 +18,7 @@
       commit: "a3ce281d5c5057ed3028e992f9278f6e22db53e6"
       subject: "Refactor: github-issue-methodology to follow OpenClaw skill conventions"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/github-issue-methodology/context/2026-03-18_git-history.md"
 
 - id: D0003
   date: "2026-03-18"
@@ -29,7 +29,7 @@
       commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
       subject: "skills: regenerate decisions.yaml from git history"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/github-issue-methodology/context/2026-03-18_git-history.md"
     excerpt:
       - "当然要精确的。"
     summary: "Regenerate decisions.yaml from git history for precision and traceability."
@@ -46,4 +46,4 @@
       commit: "d7ee9f1549050ee0053f1b383458d712f8f26027"
       subject: "skills: add meta.yaml for remaining skills"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/github-issue-methodology/context/2026-03-18_git-history.md"

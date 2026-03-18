@@ -7,7 +7,7 @@
       commit: "fecdfea7183c5aa822ef3c1c1d8eb018adeaad2c"
       subject: "Initial skills repo (handoff)"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
 - id: D0002
   date: "2026-02-04"
@@ -18,7 +18,7 @@
       commit: "ab735f1788adb3335a90d30eb1881c8e9259d382"
       subject: "handoff: rewrite SKILL.md best practices + reserve subcommand load"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
 - id: D0003
   date: "2026-02-04"
@@ -29,7 +29,7 @@
       commit: "e038ce7418fb9c7e02d2bb384795ec87c8d1a342"
       subject: "handoff: add on-demand load instructions (no implementation)"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
 - id: D0004
   date: "2026-02-04"
@@ -40,7 +40,7 @@
       commit: "7e4f94a818aeb5ebf749cafe587a94ca466bf819"
       subject: "handoff: sanitize paths + restore key modes; reserve load subcommand"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
 - id: D0005
   date: "2026-02-04"
@@ -51,7 +51,7 @@
       commit: "bc5692f7c2f1c7072bff3d0c4d93c8985035ac4a"
       subject: "feat(handoff): adopt a subcommand-first CLI with smart new/update"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
 - id: D0006
   date: "2026-02-04"
@@ -62,7 +62,7 @@
       commit: "864c5d354fd27a11cbe4270b1ae099e3dd5765f1"
       subject: "refactor(handoff): move mode details into references (keep SKILL.md lean)"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
 - id: D0007
   date: "2026-02-04"
@@ -73,7 +73,7 @@
       commit: "71e78db3caec58ca7174ec5877325319e7821224"
       subject: "feat(handoff): implement load as context primer (handoff + linked docs)"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
 - id: D0008
   date: "2026-02-04"
@@ -84,7 +84,7 @@
       commit: "905f0e57d1f054fbc27e2e053fd70b10b55c3b1a"
       subject: "refactor(handoff): streamline load + add help + human README"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
 - id: D0009
   date: "2026-03-18"
@@ -95,7 +95,7 @@
       commit: "321a1c2e9db331c55ab3393a89e7cabab4497c0c"
       subject: "skills: add meta.yaml + conventions"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
     excerpt:
       - "先commit meta.yaml then 补 decision"
       - "主要是 decision log，还有每个 skill 生成或者变更的时使用的模型。然后我 prefer YAML。"
@@ -116,7 +116,7 @@
       commit: "a3937f7a49ff7e0613085c16d679a48f1fe365bc"
       subject: "skills: add decisions.yaml stubs"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
     excerpt:
       - "先commit meta.yaml then 补 decision"
     summary: "Add decisions.yaml files and establish decision logging baseline."
@@ -136,7 +136,7 @@
       commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
       subject: "skills: regenerate decisions.yaml from git history"
     artifact:
-      path: "artifacts/_repo/context/2026-03-18_skills-metadata-system.md"
+      path: "artifacts/handoff/context/2026-03-18_git-history.md"
     excerpt:
       - "当然要精确的。"
     summary: "Regenerate decisions.yaml from git history for precision and traceability."
