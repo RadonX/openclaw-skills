@@ -1,0 +1,17 @@
+- id: D0001
+  date: "2026-02-10"
+  model: "gemini-2.5-pro"
+  decision: "Establish this skill with its current interface + safety defaults."
+  context: "Recorded from repository state; decision reflects current SKILL.md as contract surface."
+
+- id: D0002
+  date: "2026-02-10"
+  model: "gemini-2.5-pro"
+  decision: "Use SKILL.md as a router with details in references/."
+  context: "Keeps the entrypoint small; progressive disclosure."
+
+- id: D0003
+  date: "2026-02-10"
+  model: "gemini-2.5-pro"
+  decision: "Gate file/system writes behind an explicit apply step/flag."
+  context: "Safety default: propose-first; apply only when requested."

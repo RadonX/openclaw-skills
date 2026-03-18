@@ -1,0 +1,51 @@
+- id: D0001
+  date: "2026-02-14"
+  model: "openai-codex/gpt-5.2"
+  decision: "Keep the skill domain-agnostic (not zsh/stow-specific)."
+  context: "User rejected skills that overfit the immediate example; intent-writer should generalize." 
+  alternatives:
+    - "Generate a zsh-specific intent-writer skill"
+  consequences:
+    - "Extraction rules focus on user constraints and outcomes, not implementation details."
+
+- id: D0002
+  date: "2026-02-14"
+  model: "openai-codex/gpt-5.2"
+  decision: "Zero-arg interface; derive everything from the current session."
+  context: "User rejected argument-heavy interfaces; prefer minimal surface area."
+  alternatives:
+    - "One-arg path"
+    - "CLI flags for topic/window/model/date"
+  consequences:
+    - "Skill runs as a pure proposal generator from session history."
+
+- id: D0003
+  date: "2026-02-14"
+  model: "openai-codex/gpt-5.2"
+  decision: "Proposal-only (no file writes) and avoid questions by default."
+  context: "User prefers minimal friction and does not want interactive clarification for this workflow."
+  alternatives:
+    - "propose/apply with filesystem writes"
+    - "ask for title/topic when uncertain"
+  consequences:
+    - "Output is printed only; errors are short if extraction is impossible."
+
+- id: D0004
+  date: "2026-02-14"
+  model: "openai-codex/gpt-5.2"
+  decision: "Hard-limit INTENT.md to Goal + Target state (invariants) (plus fixed header block)."
+  context: "User insisted on minimal INTENT; prior attempts bloated into runbooks." 
+  alternatives:
+    - "Add additional sections (steps, rationale, implementation)"
+  consequences:
+    - "Any procedural content must be rewritten as invariants or omitted."
+
+- id: D0005
+  date: "2026-02-14"
+  model: "openai-codex/gpt-5.2"
+  decision: "Keep frontmatter description routing-only; move behavior constraints into SKILL.md guardrails."
+  context: "User questioned behavior constraints appearing in description; description should only trigger routing." 
+  alternatives:
+    - "Put operational constraints in description"
+  consequences:
+    - "SKILL.md contains guardrails; description remains short and accurate."
