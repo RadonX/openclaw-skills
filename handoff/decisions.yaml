@@ -1,17 +1,79 @@
 - id: D0001
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Establish this skill with its current interface + safety defaults."
-  context: "Recorded from repository state; decision reflects current SKILL.md as contract surface."
+  decision: "Initial skills repo (handoff)"
+  context: "From git commit fecdfea: Initial skills repo (handoff)"
+  links:
+    - "commit:fecdfea7183c5aa822ef3c1c1d8eb018adeaad2c"
 
 - id: D0002
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Use SKILL.md as a router with details in references/."
-  context: "Keeps the entrypoint small; progressive disclosure."
+  decision: "Handoff: rewrite SKILL.md best practices + reserve subcommand load"
+  context: "From git commit ab735f1: handoff: rewrite SKILL.md best practices + reserve subcommand load"
+  links:
+    - "commit:ab735f1788adb3335a90d30eb1881c8e9259d382"
 
 - id: D0003
   date: "2026-02-04"
   model: "gemini-2.5-pro"
-  decision: "Gate file/system writes behind an explicit apply step/flag."
-  context: "Safety default: propose-first; apply only when requested."
+  decision: "Handoff: add on-demand load instructions (no implementation)"
+  context: "From git commit e038ce7: handoff: add on-demand load instructions (no implementation)"
+  links:
+    - "commit:e038ce7418fb9c7e02d2bb384795ec87c8d1a342"
+
+- id: D0004
+  date: "2026-02-04"
+  model: "gemini-2.5-pro"
+  decision: "Handoff: sanitize paths + restore key modes; reserve load subcommand"
+  context: "From git commit 7e4f94a: handoff: sanitize paths + restore key modes; reserve load subcommand"
+  links:
+    - "commit:7e4f94a818aeb5ebf749cafe587a94ca466bf819"
+
+- id: D0005
+  date: "2026-02-04"
+  model: "gemini-2.5-pro"
+  decision: "Feat(handoff): adopt a subcommand-first CLI with smart new/update"
+  context: "From git commit bc5692f: feat(handoff): adopt a subcommand-first CLI with smart new/update"
+  links:
+    - "commit:bc5692f7c2f1c7072bff3d0c4d93c8985035ac4a"
+
+- id: D0006
+  date: "2026-02-04"
+  model: "gemini-2.5-pro"
+  decision: "Refactor(handoff): move mode details into references (keep SKILL.md lean)"
+  context: "From git commit 864c5d3: refactor(handoff): move mode details into references (keep SKILL.md lean)"
+  links:
+    - "commit:864c5d354fd27a11cbe4270b1ae099e3dd5765f1"
+
+- id: D0007
+  date: "2026-02-04"
+  model: "gemini-2.5-pro"
+  decision: "Feat(handoff): implement load as context primer (handoff + linked docs)"
+  context: "From git commit 71e78db: feat(handoff): implement load as context primer (handoff + linked docs)"
+  links:
+    - "commit:71e78db3caec58ca7174ec5877325319e7821224"
+
+- id: D0008
+  date: "2026-02-04"
+  model: "gemini-2.5-pro"
+  decision: "Refactor(handoff): streamline load + add help + human README"
+  context: "From git commit 905f0e5: refactor(handoff): streamline load + add help + human README"
+  links:
+    - "commit:905f0e57d1f054fbc27e2e053fd70b10b55c3b1a"
+
+- id: D0009
+  date: "2026-03-18"
+  model: "gemini-2.5-pro"
+  decision: "Create the skill skeleton and initial contract."
+  context: "From git commit 321a1c2: skills: add meta.yaml + conventions"
+  links:
+    - "commit:321a1c2e9db331c55ab3393a89e7cabab4497c0c"
+
+- id: D0010
+  date: "2026-03-18"
+  model: "gemini-2.5-pro"
+  decision: "Create the skill skeleton and initial contract."
+  context: "From git commit a3937f7: skills: add decisions.yaml stubs"
+  links:
+    - "commit:a3937f7a49ff7e0613085c16d679a48f1fe365bc"

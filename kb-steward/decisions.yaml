@@ -1,17 +1,63 @@
 - id: D0001
   date: "2026-02-11"
   model: "gemini-2.5-pro"
-  decision: "Establish this skill with its current interface + safety defaults."
-  context: "Recorded from repository state; decision reflects current SKILL.md as contract surface."
+  decision: "Feat(skills): add kb-steward — per-agent Obsidian KB manager"
+  context: "From git commit e01730b: feat(skills): add kb-steward — per-agent Obsidian KB manager"
+  links:
+    - "commit:e01730bc8bf3df28352af592310ea2e13ded667c"
 
 - id: D0002
   date: "2026-02-11"
   model: "gemini-2.5-pro"
-  decision: "Use SKILL.md as a router with details in references/."
-  context: "Keeps the entrypoint small; progressive disclosure."
+  decision: "Docs(kb-steward): add README and CONTRIBUTING"
+  context: "From git commit 51d184e: docs(kb-steward): add README and CONTRIBUTING"
+  links:
+    - "commit:51d184ef36561faa786c17711e1e8e3d1096a5b5"
 
 - id: D0003
-  date: "2026-02-11"
+  date: "2026-02-13"
   model: "gemini-2.5-pro"
-  decision: "Gate file/system writes behind an explicit apply step/flag."
-  context: "Safety default: propose-first; apply only when requested."
+  decision: "Kb-steward: default kbRoot to <workspace>/knowledge"
+  context: "From git commit c93e44e: kb-steward: default kbRoot to <workspace>/knowledge"
+  links:
+    - "commit:c93e44e62b74f5e357e16abb7a8805d0201e87a7"
+
+- id: D0004
+  date: "2026-03-09"
+  model: "gemini-2.5-pro"
+  decision: "Feat(kb-steward): support directory structure v2.0"
+  context: "From git commit f046a39: feat(kb-steward): support directory structure v2.0"
+  links:
+    - "commit:f046a3982ec0f53430a41f062948eafad3566197"
+
+- id: D0005
+  date: "2026-03-09"
+  model: "gemini-2.5-pro"
+  decision: "Refactor(kb-steward): deduplicate directory structure docs"
+  context: "From git commit 0e9f963: refactor(kb-steward): deduplicate directory structure docs"
+  links:
+    - "commit:0e9f963831085365b0924ba62707a446c047885d"
+
+- id: D0006
+  date: "2026-03-09"
+  model: "gemini-2.5-pro"
+  decision: "Refactor(kb-steward): remove v2 suffix from directory structure docs"
+  context: "From git commit aa7dd3c: refactor(kb-steward): remove v2 suffix from directory structure docs"
+  links:
+    - "commit:aa7dd3c41299805dc8d15e74c5f3e6b80f736243"
+
+- id: D0007
+  date: "2026-03-18"
+  model: "gemini-2.5-pro"
+  decision: "Create the skill skeleton and initial contract."
+  context: "From git commit 321a1c2: skills: add meta.yaml + conventions"
+  links:
+    - "commit:321a1c2e9db331c55ab3393a89e7cabab4497c0c"
+
+- id: D0008
+  date: "2026-03-18"
+  model: "gemini-2.5-pro"
+  decision: "Create the skill skeleton and initial contract."
+  context: "From git commit a3937f7: skills: add decisions.yaml stubs"
+  links:
+    - "commit:a3937f7a49ff7e0613085c16d679a48f1fe365bc"

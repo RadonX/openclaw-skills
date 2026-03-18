@@ -1,17 +1,23 @@
 - id: D0001
   date: "2026-02-10"
   model: "gemini-2.5-pro"
-  decision: "Establish this skill with its current interface + safety defaults."
-  context: "Recorded from repository state; decision reflects current SKILL.md as contract surface."
+  decision: "Feat(skill-distiller): distill skills from history (archive gemini draft)"
+  context: "From git commit 6e9b6ff: feat(skill-distiller): distill skills from history (archive gemini draft)"
+  links:
+    - "commit:6e9b6ff97a123ba31091720922d2927a59ffc9d3"
 
 - id: D0002
-  date: "2026-02-10"
+  date: "2026-03-18"
   model: "gemini-2.5-pro"
-  decision: "Use SKILL.md as a router with details in references/."
-  context: "Keeps the entrypoint small; progressive disclosure."
+  decision: "Create the skill skeleton and initial contract."
+  context: "From git commit 321a1c2: skills: add meta.yaml + conventions"
+  links:
+    - "commit:321a1c2e9db331c55ab3393a89e7cabab4497c0c"
 
 - id: D0003
-  date: "2026-02-10"
+  date: "2026-03-18"
   model: "gemini-2.5-pro"
-  decision: "Gate file/system writes behind an explicit apply step/flag."
-  context: "Safety default: propose-first; apply only when requested."
+  decision: "Create the skill skeleton and initial contract."
+  context: "From git commit a3937f7: skills: add decisions.yaml stubs"
+  links:
+    - "commit:a3937f7a49ff7e0613085c16d679a48f1fe365bc"

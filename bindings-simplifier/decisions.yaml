@@ -1,0 +1,7 @@
+- id: D0001
+  date: "2026-02-23"
+  model: "gemini-2.5-pro"
+  decision: "Feat(bindings): Add bindings-simplifier skill"
+  context: "From git commit aa36bf5: feat(bindings): Add bindings-simplifier skill"
+  links:
+    - "commit:aa36bf5f29c95fbe1e963b9bf2852974e0cf6c2e"
