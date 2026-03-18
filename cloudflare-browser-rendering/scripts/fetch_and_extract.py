@@ -3,14 +3,14 @@
 Fetch a URL via Cloudflare Browser Rendering and extract readable text.
 
 Usage:
-  python3 fetch_and_extract.py <url> [--markdown]
+  python3 fetch_and_extract.py <url> [--content]
 
 Environment variables:
   CLOUDFLARE_ACCOUNT_ID
   CLOUDFLARE_BR_TOKEN
 
 Options:
-  --markdown   Use /markdown endpoint instead of /content (returns Markdown directly)
+  --content    Use /content endpoint and parse HTML (default: /markdown)
 """
 
 import sys
@@ -30,7 +30,7 @@ def get_credentials():
     return account_id, token
 
 
-def fetch(url: str, use_markdown: bool = False) -> str:
+def fetch(url: str, use_markdown: bool = True) -> str:
     account_id, token = get_credentials()
     endpoint = "markdown" if use_markdown else "content"
     api_url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/browser-rendering/{endpoint}"
@@ -61,7 +61,7 @@ def fetch(url: str, use_markdown: bool = False) -> str:
 
 
 def extract_text(html: str) -> str:
-    """Extract readable text from rendered HTML."""
+    """Extract readable text from rendered HTML (fallback for --content mode)."""
     # Try WeChat article content area first
     match = re.search(r'id="js_content"[^>]*>(.*?)</div>', html, re.DOTALL)
     if match:
@@ -85,14 +85,14 @@ def main():
         sys.exit(1)
 
     url = args[0]
-    use_markdown = "--markdown" in args
+    use_content = "--content" in args
 
-    result = fetch(url, use_markdown=use_markdown)
+    result = fetch(url, use_markdown=not use_content)
 
-    if use_markdown:
-        print(result)
-    else:
+    if use_content:
         print(extract_text(result))
+    else:
+        print(result)
 
 
 if __name__ == "__main__":
