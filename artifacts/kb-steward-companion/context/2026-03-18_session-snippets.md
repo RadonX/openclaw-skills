@@ -2,8 +2,7 @@
 title: "kb-steward-companion context (session logs derived)"
 date: "2026-03-18"
 source: "session-logs"
-sessions_indexed:
-  - "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
+sessions_indexed_count: 5
 ---
 
 ## Source: 41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl

@@ -2,10 +2,7 @@
 title: "bindings-simplifier context (session logs derived)"
 date: "2026-03-18"
 source: "session-logs"
-sessions_indexed:
-  - "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
-  - "ac2fffe8-c925-4e32-a430-25f2281c32a9-topic-39.jsonl"
-  - "27e5d511-c1fa-4532-ae46-72f40cf604de.jsonl"
+sessions_indexed_count: 5
 ---
 
 ## Source: 41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl

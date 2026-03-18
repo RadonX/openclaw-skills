@@ -2,11 +2,7 @@
 title: "commit-message context (session logs derived)"
 date: "2026-03-18"
 source: "session-logs"
-sessions_indexed:
-  - "41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl"
-  - "9415dac9-99de-4770-ad29-4d849a86bb11-topic-1010.jsonl"
-  - "9415dac9-99de-4770-ad29-4d849a86bb11.jsonl"
-  - "2b5ae1f4-1227-4719-a3fd-a287d83cdf8c-topic-1010.jsonl"
+sessions_indexed_count: 5
 ---
 
 ## Source: 41bb6f53-7830-44fc-938c-73362aa7f6cc-topic-1010.jsonl
