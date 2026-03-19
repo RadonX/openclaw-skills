@@ -1,0 +1,43 @@
+# Episode distillation prompt (v0)
+# Purpose: turn ONE session (raw user/assistant transcript) into ONE durable context note
+# Audience: LLM subagent
+
+output_contract:
+  format: markdown
+  frontmatter: yaml
+  required_sections:
+    - Summary
+    - Decisions / constraints (human)
+    - Decisions / actions (assistant)
+    - Model signals
+    - Key quotes
+  constraints:
+    - "Do not invent context not present in the transcript."
+    - "Prefer short, decision-relevant quotes."
+    - "If transcript contains multiple unrelated threads, extract only the thread relevant to <skill>."
+
+prompt: |
+  You are distilling ONE historical episode for a skill evolution log.
+
+  Input:
+  - skill: <SKILL_NAME>
+  - raw transcript (user+assistant text)
+
+  Task:
+  Produce a durable episode note for artifacts/<skill>/context/episodes/<date>_session-<opaque>.md.
+
+  Requirements:
+  1) Focus only on parts relevant to <SKILL_NAME>. If the transcript includes other topics, ignore them.
+  2) Extract and summarize:
+     - What triggered the episode (human intent)
+     - Constraints/corrections the human enforced
+     - What changed / what was decided (as decision statements)
+     - Any explicit model signals ("Model: ..." / "Model switched to ...")
+  3) Provide 5-10 key quotes maximum.
+  4) Do NOT include procedural how-to steps unless the human explicitly demanded them as constraints.
+  5) If evidence is weak (e.g., no explicit model signals), say "unknown".
+
+  Output:
+  - YAML frontmatter with:
+    title, date, skill, session_opaque, models_observed, triggers, decisions, source_refs
+  - Markdown body with the required sections.
