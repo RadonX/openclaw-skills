@@ -12,7 +12,7 @@ Analyzes a conversation to identify and fix instruction gaps, then applies targe
 Default targets (in priority order):
 1. User-specified file (always takes precedence)
 2. The skill's own SKILL.md (if the conversation is about a skill misbehaving)
-3. Agent persona files: `SOUL.md`, `AGENTS.md`, `HEARTBEAT.md`
+3. Agent persona / identity files: `SOUL.md`, `AGENTS.md`, `IDENTITY.md`, `USER.md`
 
 ## Parameters
 
