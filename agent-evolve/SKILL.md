@@ -20,6 +20,14 @@ Default targets (in priority order):
 
 ## Workflow
 
+### Step 0 — Announce
+
+Before doing anything else, tell the user:
+- Which file you are targeting
+- What you understand the problem to be (one sentence)
+
+Example: "Analyzing `SOUL.md` — looks like the agent ignored the change management reporting rule. Let me dig in."
+
 ### Step 1 — Analyze & Preserve Core Design Principles
 
 **Before proposing any change**, read the full target file.
