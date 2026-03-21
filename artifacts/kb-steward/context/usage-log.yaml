@@ -1,0 +1,10 @@
+# usage-log.yaml — sessions where kb-steward was invoked but NOT evolved
+- session: 81288da6ce
+  date: "2026-02-23"
+  notes: "KB organization guidance (Orchestrate vs Pensieve separation); no skill file change"
+- session: 4884e63686
+  date: "2026-01-31"
+  notes: "Discussed using Obsidian as memory vault"
+- session: 79a566801a
+  date: "2026-03-19"
+  notes: "Bootstrapped KB using the skill"
