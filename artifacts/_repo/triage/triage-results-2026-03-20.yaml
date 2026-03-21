@@ -1,0 +1,757 @@
+# Triage results — Group A
+# Session × Skill pairs for: agent-evolve, commit-message, handoff, kb-steward
+
+- session: e35da61e77
+  date: 2026-02-03
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of agent-evolve, SOUL.md, AGENTS.md, or persona changes."
+
+- session: e35da61e77
+  date: 2026-02-03
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of commit-message skill."
+
+- session: e35da61e77
+  date: 2026-02-03
+  skill: handoff
+  verdict: usage_support
+  evidence_quote: "commands.nativeSkills: true（使 Telegram 原生 /handoff 可用）"
+  git_window: ""
+  notes: "User enables native /handoff command in Telegram and plans acceptance test. Gateway config change, not a change to the handoff skill itself."
+
+- session: e35da61e77
+  date: 2026-02-03
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of kb-steward."
+
+- session: 35ecfaced3
+  date: 2026-02-07
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of agent-evolve or persona/instruction files."
+
+- session: 35ecfaced3
+  date: 2026-02-07
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of commit-message skill."
+
+- session: 35ecfaced3
+  date: 2026-02-07
+  skill: handoff
+  verdict: usage_support
+  evidence_quote: "/handoff@claw_config_bot"
+  git_window: ""
+  notes: "User invokes /handoff --log to report actions taken during session restore. Pure usage."
+
+- session: 35ecfaced3
+  date: 2026-02-07
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of kb-steward."
+
+- session: 2c7ee1d880
+  date: 2026-02-02
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "Fresh /new session with only /usage and /reset commands. No skill-related content."
+
+- session: 2c7ee1d880
+  date: 2026-02-02
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of commit-message skill."
+
+- session: 2c7ee1d880
+  date: 2026-02-02
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of handoff."
+
+- session: 2c7ee1d880
+  date: 2026-02-02
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of kb-steward."
+
+- session: 96543a4bb6
+  date: 2026-01-31
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: "激活我们的作家persona"
+  git_window: ""
+  notes: "User activates a 'writer persona' for a writing project. This is a session-level persona activation for creative work, not a permanent modification to agent-evolve skill files (SOUL.md, AGENTS.md, etc.)."
+
+- session: 96543a4bb6
+  date: 2026-01-31
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of commit-message skill."
+
+- session: 96543a4bb6
+  date: 2026-01-31
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of handoff."
+
+- session: 96543a4bb6
+  date: 2026-01-31
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of kb-steward."
+
+- session: 4884e63686
+  date: 2026-01-31
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of agent-evolve or persona/instruction files."
+
+- session: 4884e63686
+  date: 2026-01-31
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of commit-message skill."
+
+- session: 4884e63686
+  date: 2026-01-31
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of handoff."
+
+- session: 4884e63686
+  date: 2026-01-31
+  skill: kb-steward
+  verdict: usage_support
+  evidence_quote: "你有什么想法，即使用obsidian来作为你自己的memory的vault吗？"
+  git_window: ""
+  notes: "User discusses using Obsidian as a memory vault and asks about format compatibility. Kb-steward is about knowledge base management; this is exploring tool integration, not proposing changes to kb-steward's structure, templates, or ingestion rules."
+
+- session: e7cd1c054e
+  date: 2026-02-27
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "Session about identity confusion (telegram kit skill, claw-config bot identity). No agent-evolve signals."
+
+- session: e7cd1c054e
+  date: 2026-02-27
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of commit-message skill."
+
+- session: e7cd1c054e
+  date: 2026-02-27
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of handoff."
+
+- session: e7cd1c054e
+  date: 2026-02-27
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of kb-steward."
+
+- session: 2d0716293b
+  date: 2026-03-01
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "Fresh /new session with no user messages after startup prompt."
+
+- session: 2d0716293b
+  date: 2026-03-01
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of commit-message skill."
+
+- session: 2d0716293b
+  date: 2026-03-01
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of handoff."
+
+- session: 2d0716293b
+  date: 2026-03-01
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of kb-steward."
+
+- session: 0b24b86571
+  date: 2026-02-22
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of agent-evolve or persona/instruction files."
+
+- session: 0b24b86571
+  date: 2026-02-22
+  skill: commit-message
+  verdict: usage_support
+  evidence_quote: "我又有新改动了。再做一次"
+  git_window: ""
+  notes: "User repeatedly asks agent to run git commands and write commit messages. This is using the commit-message skill to generate commits, not proposing changes to the skill's format, scope, or behavior."
+
+- session: 0b24b86571
+  date: 2026-02-22
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of handoff."
+
+- session: 0b24b86571
+  date: 2026-02-22
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No mention of kb-steward."
+# Triage results — Group B1
+# Sessions: b46b374a3a, 2102e8986a, 0abf38e285, 81288da6ce, 7baffcb40c, c18ca00d26
+# Skills checked: agent-evolve, commit-message, handoff, kb-steward, skill-distiller
+
+# ── Session b46b374a3a (2026-01-31) ──
+
+- session: b46b374a3a
+  date: 2026-01-31
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: No mentions of modifying agent persona/instruction files.
+
+- session: b46b374a3a
+  date: 2026-01-31
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: b46b374a3a
+  date: 2026-01-31
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Listed as candidate skill but no handoff-specific signals. Session discusses multi-bot architecture and session/memory isolation — not handoff subcommands or output structure.
+
+- session: b46b374a3a
+  date: 2026-01-31
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: b46b374a3a
+  date: 2026-01-31
+  skill: skill-distiller
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Listed as candidate skill but no skill-distiller signals in messages.
+
+# ── Session 2102e8986a (2026-02-03) ──
+
+- session: 2102e8986a
+  date: 2026-02-03
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Session covers Telegram tips, department naming, multi-bot command UX. No agent-evolve signals.
+
+- session: 2102e8986a
+  date: 2026-02-03
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 2102e8986a
+  date: 2026-02-03
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 2102e8986a
+  date: 2026-02-03
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 2102e8986a
+  date: 2026-02-03
+  skill: skill-distiller
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+# ── Session 0abf38e285 (2026-02-18) ──
+
+- session: 0abf38e285
+  date: 2026-02-18
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Session about OpenClaw config changes (requireMention, elevated settings, agent binding). Operational config management, not agent persona/instruction evolution.
+
+- session: 0abf38e285
+  date: 2026-02-18
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: User asks "have you git committed?" — context is committing config changes, not about the commit-message skill's format or behavior.
+
+- session: 0abf38e285
+  date: 2026-02-18
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 0abf38e285
+  date: 2026-02-18
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 0abf38e285
+  date: 2026-02-18
+  skill: skill-distiller
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+# ── Session 81288da6ce (2026-02-23) ──
+
+- session: 81288da6ce
+  date: 2026-02-23
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 81288da6ce
+  date: 2026-02-23
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 81288da6ce
+  date: 2026-02-23
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 81288da6ce
+  date: 2026-02-23
+  skill: kb-steward
+  verdict: evolution
+  evidence_quote: "Orchestrate 相关的知识可以放在你自己的 KB 里，但是跟 Pensieve 相关的知识还是放在 Pensieve Workspace 下的 KB 最好"
+  git_window: "2026-02-09..2026-03-09"
+  notes: User explicitly proposes changes to KB folder structure and knowledge segregation rules — Orchestrate knowledge in agent KB vs Pensieve domain knowledge in Pensieve workspace KB. Also: "你自己用 KB Steward Skill 探索，不要问我" directs use of the skill to discover structure autonomously.
+
+- session: 81288da6ce
+  date: 2026-02-23
+  skill: skill-distiller
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+# ── Session 7baffcb40c (2026-02-24) ──
+
+- session: 7baffcb40c
+  date: 2026-02-24
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 7baffcb40c
+  date: 2026-02-24
+  skill: commit-message
+  verdict: usage_support
+  evidence_quote: "不要提到OpenClaw , use commit message skill"
+  git_window: ""
+  notes: User instructs agent to use commit-message skill for committing kode-cli docs. Skill is invoked as a tool for doing work (writing commit messages), not modified.
+
+- session: 7baffcb40c
+  date: 2026-02-24
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 7baffcb40c
+  date: 2026-02-24
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: 7baffcb40c
+  date: 2026-02-24
+  skill: skill-distiller
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+# ── Session c18ca00d26 (2026-02-24) ──
+
+- session: c18ca00d26
+  date: 2026-02-24
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: c18ca00d26
+  date: 2026-02-24
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session. Session is about publishing articles and PR workflow.
+
+- session: c18ca00d26
+  date: 2026-02-24
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+
+- session: c18ca00d26
+  date: 2026-02-24
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Listed as candidate skill. Session involves finding articles in millowner workspace and publishing — content management but no KB structure/ingestion/tagging rules proposed.
+
+- session: c18ca00d26
+  date: 2026-02-24
+  skill: skill-distiller
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: Not mentioned in session.
+- session: 83c7700294
+  date: 2026-02-24
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of agent-evolve or related concepts"
+
+- session: 83c7700294
+  date: 2026-02-24
+  skill: commit-message
+  verdict: usage_support
+  evidence_quote: "先commit"
+  notes: "User requests to commit, but no discussion about modifying commit-message skill behavior"
+
+- session: 83c7700294
+  date: 2026-02-24
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of handoff"
+
+- session: 7a628a14b1
+  date: 2026-02-27
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  notes: "Discussion about repos (Trellis, Pensieve, Selfware) - not about agent-evolve skill modifications"
+
+- session: 7a628a14b1
+  date: 2026-02-27
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of commit-message"
+
+- session: 7a628a14b1
+  date: 2026-02-27
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of handoff"
+
+- session: 16aabdc758
+  date: 2026-03-04
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  notes: "User requesting progress reports and blog work - not about agent-evolve skill"
+
+- session: 16aabdc758
+  date: 2026-03-04
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of commit-message"
+
+- session: 16aabdc758
+  date: 2026-03-04
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of handoff"
+
+- session: ed6320186f
+  date: 2026-03-16
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  notes: "Analysis task about Pensieve repo author - not about agent-evolve skill modifications"
+
+- session: ed6320186f
+  date: 2026-03-16
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of commit-message"
+
+- session: ed6320186f
+  date: 2026-03-16
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of handoff"
+
+- session: ad66c936c9
+  date: 2026-03-16
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  notes: "Analysis task about Pensieve repo author personality - not about agent-evolve skill modifications"
+
+- session: ad66c936c9
+  date: 2026-03-16
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of commit-message"
+
+- session: ad66c936c9
+  date: 2026-03-16
+  skill: handoff
+  verdict: incidental
+  evidence_quote: ""
+  notes: "No mention of handoff"
+- session: dedfa4c11d
+  date: 2026-03-12
+  skill: agent-evolve
+  verdict: evolution
+  evidence_quote: "our soul.md and agents.md does not have good boundaries, compared to workspace-bootstrap"
+  git_window: "2026-02-26..2026-03-26"
+  notes: User discusses modifying SOUL.md and AGENTS.md content (boundaries, public/private symlink strategy). Directly asks agent to change persona/instruction files.
+
+- session: dedfa4c11d
+  date: 2026-03-12
+  skill: kb-steward
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: No mention of kb-steward in this session.
+
+- session: dedfa4c11d
+  date: 2026-03-12
+  skill: skill-distiller
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "skill creator" is mentioned but refers to a different skill, not skill-distiller.
+
+- session: 79a566801a
+  date: 2026-03-19
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: No mention of agent-evolve or modifications to agent persona/instruction files.
+
+- session: 79a566801a
+  date: 2026-03-19
+  skill: kb-steward
+  verdict: usage_support
+  evidence_quote: "对，而且先softlink the skill, and bootstrap your kb"
+  git_window: ""
+  notes: User invokes kb-steward to set up a KB and suggests renaming folder from knowledge/ to kb/. Using the skill, not proposing changes to it.
+
+- session: 79a566801a
+  date: 2026-03-19
+  skill: skill-distiller
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: No mention of skill-distiller in this session.
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: handoff
+  verdict: incidental
+  evidence_quote: "I want to manage my dot files under ~/repo/dotfiles with stow"
+  git_window: ""
+  notes: "Session about zsh dotfiles migration; handoff skill not relevant"
+
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: skill-distiller
+  verdict: usage_support
+  evidence_quote: "use skill distiller to create skill that writes INTENT.md"
+  git_window: ""
+  notes: "Used skill-distiller to create intent-writer skill; no evolution of skill-distiller itself"
+
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: intent-writer
+  verdict: evolution
+  evidence_quote: "use skill distiller to create skill that writes INTENT.md"
+  git_window: "2026-01-31..2026-02-28"
+  notes: "Created intent-writer skill; multiple iterations refining its interface and output format"
+
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: kb-steward
+  verdict: evolution
+  evidence_quote: "I have ~/repo palimpsest . Which has good metadata tracking. I want have sth similar for our skills"
+  git_window: "2026-01-31..2026-02-28"
+  notes: "Conceptualized kb-steward skill for skills repo metadata tracking (meta.yaml, decisions.yaml)"
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: commit-message
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "'commit' appears in messages but refers to git commits (e.g. '先 commit', 'squash 一下这些愚蠢的 INTENT header commits'), not to the commit-message skill"
+
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: source-to-notes
+  verdict: usage_support
+  evidence_quote: "Maybe we should use src to notes skill to extract the context"
+  git_window: ""
+  notes: "User invokes source-to-notes for session content extraction (Msg 58, 70, 73); all are usage, no modification of the skill proposed"
+
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: agent-evolve
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "No direct mention of 'agent-evolve' in user messages; session discusses INTENT.md creation for dotfiles and intent-writer skill creation, not agent-evolve skill itself"
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: bindings-simplifier
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "Skill not mentioned in any user message."
+
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: cloudflare-browser-rendering
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "Skill not mentioned in any user message."
+
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: github-issue-methodology
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "Skill not mentioned in any user message."
+
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: kb-steward-tools
+  verdict: incidental
+  evidence_quote: "kb-steward-tools/meta.yaml（description 已修复、contract 已填）"
+  git_window: ""
+  notes: "Listed in candidate_skills and appears in subagent meta.yaml auto-fill output, but no evolution discussion — just metadata bookkeeping."
+
+- session: fd5415f8d2
+  date: 2026-02-14
+  skill: kb-steward-companion
+  verdict: incidental
+  evidence_quote: ""
+  git_window: ""
+  notes: "Skill not mentioned in any user message."
