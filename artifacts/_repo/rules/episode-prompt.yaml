@@ -1,43 +1,179 @@
-# Episode distillation prompt (v0)
+# Episode distillation prompt (v1)
 # Purpose: turn ONE session (raw user/assistant transcript) into ONE durable context note
 # Audience: LLM subagent
+# Changed from v0: added evolution_links schema, triage verdict contract, evolution_signals per skill
 
-output_contract:
-  format: markdown
-  frontmatter: yaml
-  required_sections:
-    - Summary
-    - Decisions / constraints (human)
-    - Decisions / actions (assistant)
-    - Model signals
-    - Key quotes
-  constraints:
-    - "Do not invent context not present in the transcript."
-    - "Prefer short, decision-relevant quotes."
-    - "If transcript contains multiple unrelated threads, extract only the thread relevant to <skill>."
+---
 
-prompt: |
-  You are distilling ONE historical episode for a skill evolution log.
+## Global context (read this first)
 
-  Input:
-  - skill: <SKILL_NAME>
-  - raw transcript (user+assistant text)
+This is the OpenClaw skills repo for agent RadonX.
+Each "skill" is a reusable instruction module (SKILL.md + references/) that the agent loads
+when the user triggers it. The goal of episode notes is to record HOW each skill evolved
+over time — what constraints the human imposed, what interface changes were made, and why.
 
-  Task:
-  Produce a durable episode note for artifacts/<skill>/context/episodes/<date>_session-<opaque>.md.
+An **episode** is one session's contribution to a skill's history.
+Episodes are stored at: `artifacts/<skill>/context/episodes/<date>_session-<opaque>.md`
 
-  Requirements:
-  1) Focus only on parts relevant to <SKILL_NAME>. If the transcript includes other topics, ignore them.
-  2) Extract and summarize:
-     - What triggered the episode (human intent)
-     - Constraints/corrections the human enforced
-     - What changed / what was decided (as decision statements)
-     - Any explicit model signals ("Model: ..." / "Model switched to ...")
-  3) Provide 5-10 key quotes maximum.
-  4) Do NOT include procedural how-to steps unless the human explicitly demanded them as constraints.
-  5) If evidence is weak (e.g., no explicit model signals), say "unknown".
+---
 
-  Output:
-  - YAML frontmatter with:
-    title, date, skill, session_opaque, models_observed, triggers, decisions, source_refs
-  - Markdown body with the required sections.
+## Triage verdict definitions
+
+Use these exact verdicts:
+
+| Verdict | Meaning |
+|---------|---------|
+| `evolution` | Session contains evidence that the skill's interface, contract, or behavior was proposed/changed/rejected. User or assistant explicitly discussed *modifying* the skill itself. |
+| `usage_support` | Skill was invoked or mentioned in the context of doing work, but no change to the skill was proposed. |
+| `incidental` | Skill name or keyword appears in passing — not the subject of the conversation. |
+
+**Rules:**
+- When in doubt between `evolution` and `usage_support`, choose `usage_support`.
+- "evolve", "improve", "refine" alone are NOT sufficient for `evolution` — there must be
+  evidence of a change *to the skill files themselves* (SKILL.md, references/, decisions.yaml, INTENT.md).
+- A user saying "let's do X using handoff" = `usage_support`.
+- A user saying "handoff should support a new --dry-run flag" = `evolution`.
+
+---
+
+## Per-skill evolution signals
+
+These are the specific signals that indicate evolution (not just usage) for each skill.
+At least ONE must be present for `evolution` verdict.
+
+```yaml
+agent-evolve:
+  signals:
+    - "User asks to modify SOUL.md, AGENTS.md, SKILL.md, or other persona/instruction files"
+    - "User corrects agent's behavior and asks to make it permanent"
+    - "User proposes new rules for how the agent evolves prompts"
+  not_signals:
+    - "User asks agent to improve something in a project (not an agent file)"
+    - "Word 'improve' or 'evolve' in unrelated context"
+
+bindings-simplifier:
+  signals:
+    - "User asks to change how bindings are simplified or what rules apply"
+    - "User proposes new deduplication strategy"
+  not_signals:
+    - "User runs the skill to simplify bindings (that's usage)"
+
+cloudflare-browser-rendering:
+  signals:
+    - "User proposes change to which endpoint is used (html/markdown/screenshot/pdf)"
+    - "User asks to add new capability or change auth handling"
+
+commit-message:
+  signals:
+    - "User corrects the format, scope, or style of generated commit messages"
+    - "User asks to change when the skill auto-applies vs proposes"
+
+github-issue-methodology:
+  signals:
+    - "User proposes changes to the investigation or PR workflow steps"
+
+handoff:
+  signals:
+    - "User proposes changes to handoff subcommands (load/know/new/update/help)"
+    - "User proposes changes to handoff output structure or Obsidian vault layout"
+    - "User adds or removes safety/confirm/apply constraints"
+    - "User proposes new handoff modes or flags"
+  not_signals:
+    - "User invokes /handoff to do a handoff (usage)"
+    - "User mentions handoff in context of another task"
+
+intent-writer:
+  signals:
+    - "User corrects the INTENT.md format (header, sections, invariants)"
+    - "User proposes new rules for what goes in INTENT.md"
+    - "User asks to change the skill's output contract"
+
+kb-steward:
+  signals:
+    - "User proposes changes to KB folder structure or template format"
+    - "User changes ingestion rules or tagging conventions"
+    - "User adds or removes safety constraints for writes"
+
+kb-steward-companion:
+  signals:
+    - "User proposes new companion scripts or changes existing ones"
+
+kb-steward-tools:
+  signals:
+    - "User proposes changes to lint-links or other utility scripts"
+
+skill-distiller:
+  signals:
+    - "User corrects the shape of the distilled SKILL.md output"
+    - "User changes what the skill extracts (corrections, constraints, final shape)"
+    - "User proposes changes to the proposal-first / apply flow"
+
+skill-distiller-gemini:
+  signals:
+    - "Same as skill-distiller, but specifically the Gemini variant"
+
+source-to-notes:
+  signals:
+    - "User corrects what gets extracted (dialogue materials vs notes)"
+    - "User changes the default output location or format"
+```
+
+---
+
+## Output contract
+
+### Triage output (Phase 2)
+
+Write to: `~/.openclaw/workspace-main/temp/triage-results-<group>.yaml`
+
+```yaml
+- session: <opaque>
+  date: <YYYY-MM-DD>
+  skill: <skill-name>
+  verdict: evolution | usage_support | incidental
+  evidence_quote: "<exact quote from user message, max 120 chars>"
+  git_window: "<YYYY-MM-DD>..<YYYY-MM-DD>"  # only for evolution; ±14 days from session date
+  notes: "<optional: brief explanation>"
+```
+
+### Episode note output (Phase 3)
+
+File: `~/repo/config/openclaw/skills/artifacts/<skill>/context/episodes/<date>_session-<opaque>.md`
+
+```yaml
+---
+skill: "<skill-name>"
+date: "<YYYY-MM-DD>"
+session_opaque: "<opaque>"
+episode_type: "evolution" | "usage/support"
+title: "<short descriptive title>"
+status: "completed"
+first_timestamp: "<ISO>"
+last_timestamp: "<ISO>"
+models_observed: ["<model or unknown>"]
+evolution_links:
+  commits: []          # list of "<hash> <subject>" from git log; empty if none found
+  changes:
+    - "<what changed in the skill, evidence-based>"
+tags: []
+---
+
+## Episode Summary
+
+<2-4 sentences: what happened, what was the human's goal>
+
+## Key Decisions / Constraints
+
+<bullet list: what the human enforced or corrected>
+
+## Relation to skill evolution
+
+<1 paragraph: is this evolution or usage/support, and why>
+```
+
+**Rules for episode notes:**
+- `episode_type: evolution` only if triage verdict was `evolution`
+- Sanitize all absolute paths to `~`
+- Do not invent commit hashes — only use hashes from the pre-fetched diffs file
+- Keep body under 400 words
+- Do not include runbooks or how-to steps
