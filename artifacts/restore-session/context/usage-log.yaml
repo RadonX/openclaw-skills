@@ -1,4 +1,0 @@
-# usage-log.yaml — sessions where restore-session was invoked but NOT evolved
-- session: 35ecfaced3
-  date: "2026-02-07"
-  notes: "Used restore-session for session state recovery; no skill evolution"
