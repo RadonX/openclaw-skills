@@ -1,0 +1,11 @@
+# usage-log.yaml — sessions where handoff was invoked but NOT evolved
+# Full episode notes are reserved for evolution events only.
+- session: 35ecfaced3
+  date: "2026-02-07"
+  notes: "/handoff --log invoked during session restore"
+- session: c18ca00d26
+  date: "2026-02-24"
+  notes: "handoff keyword in blog prep session (unrelated)"
+- session: 7a628a14b1
+  date: "2026-02-27"
+  notes: "handoff keyword in Trellis/Pensieve research (unrelated)"

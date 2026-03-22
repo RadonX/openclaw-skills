@@ -1,0 +1,19 @@
+name: commit-message
+version: "0.1.0"
+status: stable
+owner: RadonX
+created: "2026-02-04"
+updated: "2026-02-04"
+
+description: 'Draft a high-quality Conventional Commit message narrative from git diffs + chat context, and optionally apply it via git commit/--amend. Use when the user asks for a commit message, wants to amend a message, or says "hg-commit"/"git commit message".'
+
+contract:
+  - 'Produces a Conventional Commit message narrative from git diffs + chat context.'
+  - 'Proposal-first by default; can apply/amend only when explicitly requested.'
+  - 'Must confirm before running git commit/amend actions.'
+
+provenance:
+  created:
+    date: "2026-02-04"
+    model: 'gemini-2.5-pro'
+    method: "git history inference"
