@@ -1,0 +1,19 @@
+name: cloudflare-browser-rendering
+version: "0.1.1"
+status: stable
+owner: RadonX
+created: "2026-03-18"
+updated: "2026-03-18"
+
+description: "Fetch fully JS-rendered web page content via Cloudflare Browser Rendering API (headless Chromium). Supports: full HTML, markdown, screenshots, PDF, link extraction. Requires CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_BR_TOKEN from SECRETS.md."
+
+contract:
+  - "Requires CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_BR_TOKEN from SECRETS.md."
+  - "Supports /content, /markdown, /screenshot, /pdf, /links endpoints."
+  - "Defaults to /markdown endpoint for cleaner output without HTML parsing."
+
+provenance:
+  created:
+    date: "2026-03-18"
+    model: ""
+    method: git-history

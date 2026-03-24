@@ -1,18 +1,20 @@
 name: kb-steward-companion
-version: "0.1.0"
+version: "0.3.1"
 status: utility
 owner: RadonX
 created: "2026-02-21"
-updated: "2026-03-18"
+updated: "2026-03-09"
 
-description: 'TODO: kb-steward-companion'
+description: "Query and maintenance utilities for kb-steward managed Obsidian vaults. Scripts: todo.sh, tags.sh, tag.sh, status.sh, prio.sh, delete.sh. Works alongside kb-steward (kb-steward writes/ingests, tools query/maintain). Note: renamed to kb-steward-tools in 2026-02-23."
 
 contract:
-  - 'Provides companion scripts for querying/maintaining a kb-steward knowledge base.'
-  - 'Scripts are small, focused CLI tools (not an interactive skill flow).'
+  - "Auto-discovers vault path from obsidian-cli; no hardcoded paths."
+  - "Clear scope: kb-steward writes/ingests; these tools query/maintain."
+  - "delete.sh includes .bak backup safety before deletion."
+  - "tag.sh uses yq for YAML tag management (--add, --remove, --list)."
 
 provenance:
   created:
     date: "2026-02-21"
-    model: "gemini-2.5-pro"
-    method: "git history inference"
+    model: ""
+    method: git-history

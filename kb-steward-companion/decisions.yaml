@@ -1,93 +1,49 @@
 - id: D0001
   date: "2026-02-21"
-  model: "gemini-2.5-pro"
-  decision: "feat(kb-steward): Add kb-steward-companion skill (#2)"
+  model: ""
+  decision: "feat(kb-steward): Add kb-steward-companion skill"
+  summary: "Initial release with CLI scripts (todo.sh, tags.sh, status.sh, prio.sh) for task management in Obsidian vault."
   evidence:
     git:
       commit: "50656dfd10b3e74c82cb413aaef69bd278d464c3"
       subject: "feat(kb-steward): Add kb-steward-companion skill (#2)"
-    artifact:
-      path: "artifacts/kb-steward-companion/context/2026-03-18_git-history.md"
 
 - id: D0002
   date: "2026-02-21"
-  model: "gemini-2.5-pro"
+  model: ""
   decision: "refactor(kb-steward-companion): Improve portability and add comprehensive documentation"
+  summary: "Removed hardcoded vault paths; auto-discover from obsidian-cli; added references/ and README.md."
   evidence:
     git:
       commit: "9d878a95c306a5043fdb1fa0d16cd450b2b6faa4"
       subject: "refactor(kb-steward-companion): Improve portability and add comprehensive documentation"
-    artifact:
-      path: "artifacts/kb-steward-companion/context/2026-03-18_git-history.md"
 
 - id: D0003
   date: "2026-02-22"
-  model: "gemini-2.5-pro"
+  model: ""
   decision: "docs(kb-steward-companion): Clarify relationship with kb-steward and add delete utility"
+  summary: "Clarified scope boundary (kb-steward writes, companion queries); added delete.sh with .bak safety."
   evidence:
     git:
       commit: "d7399bf4b7b0abb1f8bf6e7ca766284bd20817fb"
       subject: "docs(kb-steward-companion): Clarify relationship with kb-steward and add delete utility"
-    artifact:
-      path: "artifacts/kb-steward-companion/context/2026-03-18_git-history.md"
 
 - id: D0004
   date: "2026-02-23"
-  model: "gemini-2.5-pro"
+  model: ""
   decision: "refactor(kb-steward-companion): Rename to kb-steward-tools and simplify docs"
+  summary: "Renamed skill to kb-steward-tools for clearer naming; simplified README and SKILL.md."
   evidence:
     git:
       commit: "6fd35140d4d00a9551094eedfcdd2ecc5a399d94"
       subject: "refactor(kb-steward-companion): Rename to kb-steward-tools and simplify docs"
-    artifact:
-      path: "artifacts/kb-steward-companion/context/2026-03-18_git-history.md"
 
 - id: D0005
-  date: "2026-02-23"
-  model: "gemini-2.5-pro"
-  decision: "refactor(kb-steward): Rename folder from kb-steward-companion to kb-steward-tools"
-  evidence:
-    git:
-      commit: "5d3191ac43f7efd2e5dcd7571626b09741e2d909"
-      subject: "refactor(kb-steward): Rename folder from kb-steward-companion to kb-steward-tools"
-    artifact:
-      path: "artifacts/kb-steward-companion/context/2026-03-18_git-history.md"
-
-- id: D0006
   date: "2026-03-09"
-  model: "gemini-2.5-pro"
-  decision: "feat(kb-steward-companion): add tag.sh script > > Adds a new script `tag.sh` to manage YAML tags in notes. > > - Uses `yq` for safe and robust YAML manipulation. > - Supports `--add`, `--remove`, and `--list` actions. > - Includes dependency check for `yq`. > - Added `SKILL.md` to document all companion scripts."
+  model: ""
+  decision: "feat(kb-steward-companion): add tag.sh script"
+  summary: "Added tag.sh for YAML tag management in notes using yq (--add, --remove, --list)."
   evidence:
     git:
       commit: "cceead63524fb6e7131e09f0fef7e547295fe685"
-      subject: "feat(kb-steward-companion): add tag.sh script > > Adds a new script `tag.sh` to manage YAML tags in notes. > > - Uses `yq` for safe and robust YAML manipulation. > - Supports `--add`, `--remove`, and `--list` actions. > - Includes dependency check for `yq`. > - Added `SKILL.md` to document all companion scripts."
-    artifact:
-      path: "artifacts/kb-steward-companion/context/2026-03-18_git-history.md"
-
-- id: D0007
-  date: "2026-03-18"
-  model: "gemini-2.5-pro"
-  decision: "skills: regenerate decisions.yaml from git history"
-  evidence:
-    git:
-      commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
-      subject: "skills: regenerate decisions.yaml from git history"
-    artifact:
-      path: "artifacts/kb-steward-companion/context/2026-03-18_git-history.md"
-    excerpt:
-      - "当然要精确的。"
-    summary: "Regenerate decisions.yaml from git history for precision and traceability."
-    inferred_models:
-      observed:
-        - "gemini-local/gemini-2.5-pro"
-
-- id: D0008
-  date: "2026-03-18"
-  model: "gemini-2.5-pro"
-  decision: "skills: add meta.yaml for remaining skills"
-  evidence:
-    git:
-      commit: "d7ee9f1549050ee0053f1b383458d712f8f26027"
-      subject: "skills: add meta.yaml for remaining skills"
-    artifact:
-      path: "artifacts/kb-steward-companion/context/2026-03-18_git-history.md"
+      subject: "feat(kb-steward-companion): add tag.sh script"

@@ -1,19 +1,21 @@
 name: skill-distiller
-version: "0.1.0"
+version: "0.2.0"
 status: stable
 owner: RadonX
 created: "2026-02-08"
 updated: "2026-02-10"
 
-description: 'Distill a repeatable OpenClaw skill from a successful conversation history. Use when you want to turn “we did this once successfully” into a reusable skill (SKILL.md + references/), capturing the corrections and the final accepted shape.'
+description: "Distill a repeatable OpenClaw skill from a successful conversation history. Use when you want to turn \"we did this once successfully\" into a reusable skill (SKILL.md + references/), capturing the corrections and the final accepted shape."
 
 contract:
-  - 'Distills a successful conversation history into a reusable OpenClaw skill.'
-  - 'Emphasizes extracting user corrections/constraints and the final accepted artifact.'
-  - 'Default is proposal-only; apply/write requires explicit user request.'
+  - "Analyzes conversation history (initial state → corrections → final accepted state)."
+  - "Abstracts principles from corrections; never copies verbatim."
+  - "Follows progressive disclosure: lean SKILL.md router + references/ for detailed logic."
+  - "Proposal-first before writing final artifacts."
+  - "Writes output to ~/repo/config/openclaw/skills/<name>/."
 
 provenance:
   created:
     date: "2026-02-08"
-    model: 'gemini-2.5-pro'
-    method: "git history inference"
+    model: ""
+    method: git-history

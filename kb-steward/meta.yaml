@@ -1,18 +1,22 @@
 name: kb-steward
-version: "0.1.0"
+version: "0.2.0"
 status: stable
 owner: RadonX
 created: "2026-02-11"
 updated: "2026-03-09"
 
-description: 'Per-agent Obsidian KB steward: auto-bootstrap folders/READMEs/templates and ingest links/snippets into notes (Projects/Areas/Research) with lightweight related-doc linking.'
+description: "Per-agent Obsidian KB steward: auto-bootstrap folders/READMEs/templates and ingest links/snippets into notes (Projects/Areas/Research) with lightweight related-doc linking."
 
 contract:
-  - 'Maintains and queries a per-agent knowledge base in an Obsidian vault.'
-  - 'Uses tool-assisted operations with safety guardrails for writes.'
+  - "Subcommands: add / doctor / bootstrap."
+  - "Additive-only: never overwrites existing content."
+  - "Minimal chat noise: replies are path-only."
+  - "Taxonomy is evolvable; new tags/fields recorded in folder README."
+  - "Default kbRoot: <workspace>/knowledge."
+  - "Project structure: 10-Projects/(active|completed|backlog|templates), each with PROJECT.md + tasks/ + references/."
 
 provenance:
   created:
     date: "2026-02-11"
-    model: 'gemini-2.5-pro'
-    method: "git history inference"
+    model: ""
+    method: git-history

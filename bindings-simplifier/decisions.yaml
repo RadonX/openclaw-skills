@@ -1,38 +1,9 @@
 - id: D0001
   date: "2026-02-23"
-  model: "gemini-2.5-pro"
+  model: ""
   decision: "feat(bindings): Add bindings-simplifier skill"
+  summary: "Created new skill to simplify OpenClaw bindings configuration by eliminating redundancy while preserving functionality; includes dry-run mode and reference docs."
   evidence:
     git:
       commit: "aa36bf5f29c95fbe1e963b9bf2852974e0cf6c2e"
       subject: "feat(bindings): Add bindings-simplifier skill"
-    artifact:
-      path: "artifacts/bindings-simplifier/context/2026-03-18_git-history.md"
-
-- id: D0002
-  date: "2026-03-18"
-  model: "gemini-2.5-pro"
-  decision: "skills: regenerate decisions.yaml from git history"
-  evidence:
-    git:
-      commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
-      subject: "skills: regenerate decisions.yaml from git history"
-    artifact:
-      path: "artifacts/bindings-simplifier/context/2026-03-18_git-history.md"
-    excerpt:
-      - "当然要精确的。"
-    summary: "Regenerate decisions.yaml from git history for precision and traceability."
-    inferred_models:
-      observed:
-        - "gemini-local/gemini-2.5-pro"
-
-- id: D0003
-  date: "2026-03-18"
-  model: "gemini-2.5-pro"
-  decision: "skills: add meta.yaml for remaining skills"
-  evidence:
-    git:
-      commit: "d7ee9f1549050ee0053f1b383458d712f8f26027"
-      subject: "skills: add meta.yaml for remaining skills"
-    artifact:
-      path: "artifacts/bindings-simplifier/context/2026-03-18_git-history.md"

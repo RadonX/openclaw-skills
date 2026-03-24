@@ -5,15 +5,16 @@ owner: RadonX
 created: "2026-03-18"
 updated: "2026-03-18"
 
-description: 'Distill the current session into a minimal INTENT.md (Goal + Target state invariants).'
+description: "Distill the current session into a minimal INTENT.md (Goal + Target state invariants)."
 
 contract:
-  - 'Distills the current session into a minimal INTENT.md (Goal + invariants).'
-  - 'Proposal-only: prints content and does not write files.'
-  - 'Avoids questions by default; keeps output minimal and invariant-focused.'
+  - "Zero-arg: uses current session as sole input."
+  - "Proposal-only: does not write files."
+  - "Prefer not to ask questions; emit short error if session is insufficient."
+  - "Output fixed to: header block (title/Model/Updated) + ## Goal + ## Target state (invariants) only."
 
 provenance:
   created:
     date: "2026-03-18"
-    model: 'gemini-2.5-pro'
-    method: "git history inference"
+    model: ""
+    method: git-history

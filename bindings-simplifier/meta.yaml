@@ -3,16 +3,18 @@ version: "0.1.0"
 status: stable
 owner: RadonX
 created: "2026-02-23"
-updated: "2026-03-18"
+updated: "2026-02-23"
 
-description: 'Simplify OpenClaw bindings configuration by eliminating redundancy while preserving functionality. Use when: (1) bindings have grown too large, (2) there are repetitive per-topic bindings, (3) an account is only used by one agent. Triggered by requests like "simplify bindings", "reduce binding count", or "clean up redundant topic bindings".'
+description: "Simplify OpenClaw bindings configuration by eliminating redundancy while preserving functionality. Use when: (1) bindings have grown too large, (2) there are repetitive per-topic bindings, (3) an account is only used by one agent."
 
 contract:
-  - 'Simplifies OpenClaw bindings configuration while preserving behavior.'
-  - 'Produces a proposed patch/diff before applying changes.'
+  - "Proposes simplification before writing; always asks for user confirmation."
+  - "Never removes a binding without verifying agent reachability."
+  - "Handles account-level binding simplification and per-topic consolidation."
+  - "Supports dry-run mode for safe preview."
 
 provenance:
   created:
     date: "2026-02-23"
-    model: "gemini-2.5-pro"
-    method: "git history inference"
+    model: ""
+    method: git-history

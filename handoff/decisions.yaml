@@ -1,145 +1,59 @@
 - id: D0001
   date: "2026-02-04"
-  model: "gemini-2.5-pro"
+  model: ""
   decision: "Initial skills repo (handoff)"
+  summary: "First commit establishing the handoff skill in the skills repo."
   evidence:
     git:
       commit: "fecdfea7183c5aa822ef3c1c1d8eb018adeaad2c"
       subject: "Initial skills repo (handoff)"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
 - id: D0002
   date: "2026-02-04"
-  model: "gemini-2.5-pro"
-  decision: "handoff: rewrite SKILL.md best practices + reserve subcommand load"
-  evidence:
-    git:
-      commit: "ab735f1788adb3335a90d30eb1881c8e9259d382"
-      subject: "handoff: rewrite SKILL.md best practices + reserve subcommand load"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
-
-- id: D0003
-  date: "2026-02-04"
-  model: "gemini-2.5-pro"
-  decision: "handoff: add on-demand load instructions (no implementation)"
-  evidence:
-    git:
-      commit: "e038ce7418fb9c7e02d2bb384795ec87c8d1a342"
-      subject: "handoff: add on-demand load instructions (no implementation)"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
-
-- id: D0004
-  date: "2026-02-04"
-  model: "gemini-2.5-pro"
-  decision: "handoff: sanitize paths + restore key modes; reserve load subcommand"
-  evidence:
-    git:
-      commit: "7e4f94a818aeb5ebf749cafe587a94ca466bf819"
-      subject: "handoff: sanitize paths + restore key modes; reserve load subcommand"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
-
-- id: D0005
-  date: "2026-02-04"
-  model: "gemini-2.5-pro"
+  model: ""
   decision: "feat(handoff): adopt a subcommand-first CLI with smart new/update"
+  summary: "Reshaped /handoff into orthogonal CLI (new/update/know/load) with smart default choosing between new vs update; introduced --ask flag for extra confirmations."
   evidence:
     git:
       commit: "bc5692f7c2f1c7072bff3d0c4d93c8985035ac4a"
       subject: "feat(handoff): adopt a subcommand-first CLI with smart new/update"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
-- id: D0006
+- id: D0003
   date: "2026-02-04"
-  model: "gemini-2.5-pro"
+  model: ""
   decision: "refactor(handoff): move mode details into references (keep SKILL.md lean)"
+  summary: "Moved workflow details to references/ (DEFAULT.md, KNOW.md, PRINCIPLES.md); SKILL.md now acts as router only."
   evidence:
     git:
       commit: "864c5d354fd27a11cbe4270b1ae099e3dd5765f1"
       subject: "refactor(handoff): move mode details into references (keep SKILL.md lean)"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
-- id: D0007
+- id: D0004
   date: "2026-02-04"
-  model: "gemini-2.5-pro"
-  decision: "feat(handoff): implement load as context primer (handoff + linked docs)"
+  model: ""
+  decision: "feat(handoff): implement load as context primer"
+  summary: "Upgraded load to read-only context primer; resolves handoff path from project name, reads linked knowledge/playbooks."
   evidence:
     git:
       commit: "71e78db3caec58ca7174ec5877325319e7821224"
       subject: "feat(handoff): implement load as context primer (handoff + linked docs)"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
-- id: D0008
+- id: D0005
   date: "2026-02-04"
-  model: "gemini-2.5-pro"
+  model: ""
   decision: "refactor(handoff): streamline load + add help + human README"
+  summary: "load now accepts project name only (Telegram-friendly); added /handoff help via HELP.md and human-facing README."
   evidence:
     git:
       commit: "905f0e57d1f054fbc27e2e053fd70b10b55c3b1a"
       subject: "refactor(handoff): streamline load + add help + human README"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
 
-- id: D0009
-  date: "2026-03-18"
-  model: "gemini-2.5-pro"
-  decision: "skills: add meta.yaml + conventions"
+- id: D0006
+  date: "2026-03-22"
+  model: ""
+  decision: "chore: add handoff/docs"
+  summary: "Added docs directory to handoff skill."
   evidence:
     git:
-      commit: "321a1c2e9db331c55ab3393a89e7cabab4497c0c"
-      subject: "skills: add meta.yaml + conventions"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
-    excerpt:
-      - "先commit meta.yaml then 补 decision"
-      - "主要是 decision log，还有每个 skill 生成或者变更的时使用的模型。然后我 prefer YAML。"
-    summary: "Introduce per-skill meta.yaml and repo conventions for metadata tracking."
-    inferred_models:
-      observed:
-        - "openai-codex/gpt-5.2"
-        - "gemini-local/gemini-2.5-pro"
-      possible:
-        - "gemini-local/gemini-2.5-flash"
-
-- id: D0010
-  date: "2026-03-18"
-  model: "gemini-2.5-pro"
-  decision: "skills: add decisions.yaml stubs"
-  evidence:
-    git:
-      commit: "a3937f7a49ff7e0613085c16d679a48f1fe365bc"
-      subject: "skills: add decisions.yaml stubs"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
-    excerpt:
-      - "先commit meta.yaml then 补 decision"
-    summary: "Add decisions.yaml files and establish decision logging baseline."
-    inferred_models:
-      observed:
-        - "openai-codex/gpt-5.2"
-        - "gemini-local/gemini-2.5-pro"
-      possible:
-        - "gemini-local/gemini-2.5-flash"
-
-- id: D0011
-  date: "2026-03-18"
-  model: "gemini-2.5-pro"
-  decision: "skills: regenerate decisions.yaml from git history"
-  evidence:
-    git:
-      commit: "7728a2eedb5d17910e1180fc581063b612d513a4"
-      subject: "skills: regenerate decisions.yaml from git history"
-    artifact:
-      path: "artifacts/handoff/context/2026-03-18_git-history.md"
-    excerpt:
-      - "当然要精确的。"
-    summary: "Regenerate decisions.yaml from git history for precision and traceability."
-    inferred_models:
-      observed:
-        - "gemini-local/gemini-2.5-pro"
+      commit: "2d8fe9bb3fab1ae462c5fcc22ab12831a86dfcfc"
+      subject: "chore: add handoff/docs and kb-steward-tools lint script"

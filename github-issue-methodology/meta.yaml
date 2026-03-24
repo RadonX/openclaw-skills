@@ -1,18 +1,21 @@
 name: github-issue-methodology
-version: "0.1.0"
+version: "0.2.0"
 status: stable
 owner: RadonX
 created: "2026-03-02"
-updated: "2026-03-18"
+updated: "2026-03-02"
 
-description: 'Systematic methodology for addressing GitHub issues: investigate, fix, validate, and merge PRs quickly (6-12 hours from issue to merge).'
+description: "Systematic methodology for addressing GitHub issues: investigate, fix, validate, and merge PRs quickly (6-12 hours from issue to merge)."
 
 contract:
-  - 'Provides a systematic workflow for investigating and fixing GitHub issues.'
-  - 'Emphasizes research, testing, and fast iteration from issue to PR.'
+  - "Low-interaction autonomous workflow; agent researches before asking."
+  - "Always reads existing test patterns before writing new tests."
+  - "Ships within 6-12 hours from issue to PR submission."
+  - "SKILL.md is a router; details in references/ (CORE_PRINCIPLES, INVESTIGATE, PITFALLS)."
+  - "Requires explicit issue URL for investigate subcommand."
 
 provenance:
   created:
     date: "2026-03-02"
-    model: "gemini-2.5-pro"
-    method: "git history inference"
+    model: ""
+    method: git-history

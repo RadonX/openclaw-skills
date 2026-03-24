@@ -1,19 +1,21 @@
 name: handoff
-version: "0.1.0"
+version: "0.2.0"
 status: stable
 owner: RadonX
 created: "2026-02-04"
-updated: "2026-02-04"
+updated: "2026-03-22"
 
-description: 'Create handoff documentation (temporary state transfer + optional work log) in a shared Obsidian vault. Use when you need to hand work to a future human/agent, or when the user says "handoff", "交接", "接手", "handover".'
+description: "Create handoff documentation (temporary state transfer + optional work log) in a shared Obsidian vault. Use when you need to hand work to a future human/agent, when the user says \"handoff\", \"hand off\", or \"create a handoff\"."
 
 contract:
-  - 'Creates handoff docs in the shared Obsidian vault for state transfer.'
-  - 'Separates temporary handoff vs durable knowledge capture.'
-  - 'Permanent knowledge writes require explicit apply/confirmation.'
+  - "Subcommand-first CLI: new / update / know / load / help."
+  - "SKILL.md acts as router; details in references/ (progressive disclosure)."
+  - "Knowledge updates (know) are proposal-first; require explicit apply."
+  - "load is read-only context primer; accepts project name only (not full paths)."
+  - "--ask flag flips to confirmation-heavy mode."
 
 provenance:
   created:
     date: "2026-02-04"
-    model: 'gemini-2.5-pro'
-    method: "git history inference"
+    model: ""
+    method: git-history

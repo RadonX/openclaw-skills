@@ -1,0 +1,21 @@
+name: agent-evolve
+version: "0.1.0"
+status: draft
+owner: RadonX
+created: "2026-03-19"
+updated: "2026-03-19"
+
+description: "Refine agent prompt files (SOUL.md, AGENTS.md, SKILL.md, or any agent instruction doc) based on a conversation. Use when a user says \"evolve\", \"refine\", \"improve\", or \"fix\" an agent's instructions after observing a failure, misunderstanding, or suboptimal behavior in conversation. Analyzes root causes and proposes minimal, principle-driven fixes. Accepts optional --style flag pointing to a style guide file."
+
+contract:
+  - "Must analyze conversation context before proposing changes."
+  - "Must identify root causes of failures, not just surface symptoms."
+  - "Must propose minimal, principle-driven fixes (not wholesale rewrites)."
+  - "Must announce target file and problem understanding (Step 0) before acting."
+  - "Target files: SOUL.md, AGENTS.md, SKILL.md, IDENTITY.md, USER.md, or any agent instruction doc."
+
+provenance:
+  created:
+    date: "2026-03-19"
+    model: ""
+    method: git-history

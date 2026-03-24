@@ -1,19 +1,20 @@
 name: source-to-notes
 version: "0.1.0"
-status: stable
+status: draft
 owner: RadonX
 created: "2026-02-10"
 updated: "2026-02-10"
 
-description: 'Turn an OpenClaw conversation (session history) into usable dialogue materials and/or lightweight notes. The agent decides whether to run Step One extraction based on context; extracted materials default to /tmp/. Goal is optional: omitted goal triggers default behavior.'
+description: "Turn an OpenClaw conversation (session history) into usable dialogue materials and/or lightweight notes. The agent decides whether to run Step One extraction based on context; extracted materials default to /tmp/. Goal is optional."
 
 contract:
-  - 'Turns a conversation/session history into dialogue materials and/or lightweight notes.'
-  - 'Proposal-first by default; file writes only on explicit apply.'
-  - 'Avoids rigid structure; never deletes or rewrites source history.'
+  - "Single interface entry point; supports --session/--message-id range flags."
+  - "Proposal-only without --apply flag."
+  - "Extracted materials default to /tmp/; Goal parameter is optional."
+  - "Agent autonomously decides whether to run Step One extraction."
 
 provenance:
   created:
     date: "2026-02-10"
-    model: 'gemini-2.5-pro'
-    method: "git history inference"
+    model: ""
+    method: git-history

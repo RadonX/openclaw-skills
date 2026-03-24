@@ -1,18 +1,20 @@
 name: kb-steward-tools
-version: "0.1.0"
+version: "0.2.0"
 status: utility
 owner: RadonX
 created: "2026-02-23"
-updated: "2026-03-09"
+updated: "2026-03-22"
 
-description: 'Query and maintenance utilities for kb-steward managed Obsidian vaults. Use when: (1) Searching tasks by tags in 10-Projects/, (2) Updating project status in frontmatter, (3) Browsing tag taxonomy established by kb-steward, (4) Viewing projects by priority, (5) Deleting notes with backup. This is a toolset for kb-steward: kb-steward writes/ingests, these tools query/maintain.'
+description: "Query and maintenance utilities for kb-steward managed Obsidian vaults. Scripts: todo.sh, tags.sh, status.sh, prio.sh, tag.sh. Utility toolset: kb-steward writes/ingests, these tools query/maintain."
 
 contract:
-  - 'Provides shared utilities/conventions used by kb-steward workflows.'
-  - 'Not primarily user-invoked; supports other skills/agents.'
+  - "Does NOT write/ingest content; that is kb-steward's responsibility."
+  - "Scripts auto-discover vault path; no hardcoded paths."
+  - "Supports layered project structure (10-Projects/active|completed|backlog|templates)."
+  - "Directory structure documented in DIRECTORY_STRUCTURE.md + TOOLS_EXTENSION.md."
 
 provenance:
   created:
     date: "2026-02-23"
-    model: 'gemini-2.5-pro'
-    method: "git history inference"
+    model: ""
+    method: git-history
