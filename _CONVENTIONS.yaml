@@ -17,11 +17,10 @@ meta_yaml:
     - created
     - updated
     - contract
-    - provenance
 
   notes:
     contract: "List of invariant constraints for the skill; minimal and stable."
-    provenance: "Records model + date used for creation/last significant change."
+    "Model tracking": "Model attribution is recorded per-commit in decisions.yaml, not in meta.yaml."
 
 decisions_yaml:
   record_when: "Important interface/contract/behavior changes only."

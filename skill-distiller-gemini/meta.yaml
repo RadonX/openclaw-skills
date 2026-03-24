@@ -14,8 +14,3 @@ contract:
   - "Proposal-first; requires explicit user request before writing files."
   - "Always reads references/PRINCIPLES.md before synthesis."
 
-provenance:
-  created:
-    date: "2026-02-10"
-    model: ""
-    method: "git-history (archived from active skill-distiller)"

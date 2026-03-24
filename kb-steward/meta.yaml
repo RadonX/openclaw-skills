@@ -15,8 +15,3 @@ contract:
   - "Default kbRoot: <workspace>/knowledge."
   - "Project structure: 10-Projects/(active|completed|backlog|templates), each with PROJECT.md + tasks/ + references/."
 
-provenance:
-  created:
-    date: "2026-02-11"
-    model: ""
-    method: git-history

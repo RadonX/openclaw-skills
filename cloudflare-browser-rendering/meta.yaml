@@ -12,8 +12,3 @@ contract:
   - "Supports /content, /markdown, /screenshot, /pdf, /links endpoints."
   - "Defaults to /markdown endpoint for cleaner output without HTML parsing."
 
-provenance:
-  created:
-    date: "2026-03-18"
-    model: ""
-    method: git-history

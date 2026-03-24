@@ -14,8 +14,3 @@ contract:
   - "Must announce target file and problem understanding (Step 0) before acting."
   - "Target files: SOUL.md, AGENTS.md, SKILL.md, IDENTITY.md, USER.md, or any agent instruction doc."
 
-provenance:
-  created:
-    date: "2026-03-19"
-    model: ""
-    method: git-history

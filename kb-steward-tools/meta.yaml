@@ -13,8 +13,3 @@ contract:
   - "Supports layered project structure (10-Projects/active|completed|backlog|templates)."
   - "Directory structure documented in DIRECTORY_STRUCTURE.md + TOOLS_EXTENSION.md."
 
-provenance:
-  created:
-    date: "2026-02-23"
-    model: ""
-    method: git-history

@@ -14,8 +14,3 @@ contract:
   - "load is read-only context primer; accepts project name only (not full paths)."
   - "--ask flag flips to confirmation-heavy mode."
 
-provenance:
-  created:
-    date: "2026-02-04"
-    model: ""
-    method: git-history

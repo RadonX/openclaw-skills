@@ -14,8 +14,3 @@ contract:
   - "SKILL.md is a router; details in references/ (CORE_PRINCIPLES, INVESTIGATE, PITFALLS)."
   - "Requires explicit issue URL for investigate subcommand."
 
-provenance:
-  created:
-    date: "2026-03-02"
-    model: ""
-    method: git-history

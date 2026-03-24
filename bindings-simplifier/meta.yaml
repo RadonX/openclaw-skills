@@ -13,8 +13,3 @@ contract:
   - "Handles account-level binding simplification and per-topic consolidation."
   - "Supports dry-run mode for safe preview."
 
-provenance:
-  created:
-    date: "2026-02-23"
-    model: ""
-    method: git-history

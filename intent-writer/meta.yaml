@@ -13,8 +13,3 @@ contract:
   - "Prefer not to ask questions; emit short error if session is insufficient."
   - "Output fixed to: header block (title/Model/Updated) + ## Goal + ## Target state (invariants) only."
 
-provenance:
-  created:
-    date: "2026-03-18"
-    model: ""
-    method: git-history

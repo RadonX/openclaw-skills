@@ -14,8 +14,3 @@ contract:
   - "Proposal-first before writing final artifacts."
   - "Writes output to ~/repo/config/openclaw/skills/<name>/."
 
-provenance:
-  created:
-    date: "2026-02-08"
-    model: ""
-    method: git-history

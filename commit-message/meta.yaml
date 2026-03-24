@@ -13,8 +13,3 @@ contract:
   - "Never runs git push."
   - "Requires explicit user confirmation before modifying the repo."
 
-provenance:
-  created:
-    date: "2026-02-04"
-    model: ""
-    method: git-history

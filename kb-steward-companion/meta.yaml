@@ -13,8 +13,3 @@ contract:
   - "delete.sh includes .bak backup safety before deletion."
   - "tag.sh uses yq for YAML tag management (--add, --remove, --list)."
 
-provenance:
-  created:
-    date: "2026-02-21"
-    model: ""
-    method: git-history
