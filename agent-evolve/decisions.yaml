@@ -1,29 +1,28 @@
+---
 - id: D0001
-  date: "2026-03-19"
-  model: ""
-  decision: "feat: add agent-evolve skill for refining agent prompt files"
-  summary: "Created initial skill adapted from internal v2.1.0 refine-agent-doc tool; removed company-internal paths; added references/root-cause-patterns.md with 6 common failure patterns."
+  date: '2026-03-19'
+  model: 
+  decision: 'feat: add agent-evolve skill for refining agent prompt files'
+  summary: Created initial skill adapted from internal v2.1.0 refine-agent-doc tool; removed company-internal paths; added references/root-cause-patterns.md with 6 common failure patterns.
   evidence:
     git:
-      commit: "97ca17525e0fe3f3033426824be9aaa5914f2b9b"
-      subject: "feat: add agent-evolve skill for refining agent prompt files"
-
+      commit: 97ca17525e0fe3f3033426824be9aaa5914f2b9b
+      subject: 'feat: add agent-evolve skill for refining agent prompt files'
 - id: D0002
-  date: "2026-03-19"
-  model: ""
-  decision: "fix: correct default target files list"
-  summary: "Replaced HEARTBEAT.md with IDENTITY.md and USER.md as correct persona/identity default targets."
+  date: '2026-03-19'
+  model: 
+  decision: 'fix: correct default target files list'
+  summary: Replaced HEARTBEAT.md with IDENTITY.md and USER.md as correct persona/identity default targets.
   evidence:
     git:
-      commit: "10475d3b6f436f560bd53323ff365e1d4f788b05"
-      subject: "fix: correct default target files list (HEARTBEAT.md is not a persona file)"
-
+      commit: 10475d3b6f436f560bd53323ff365e1d4f788b05
+      subject: 'fix: correct default target files list (HEARTBEAT.md is not a persona file)'
 - id: D0003
-  date: "2026-03-19"
-  model: ""
-  decision: "feat: add Step 0 announce on skill invocation"
-  summary: "Added Step 0 requiring agent to state target file and problem understanding before acting."
+  date: '2026-03-19'
+  model: 
+  decision: 'feat: add Step 0 announce on skill invocation'
+  summary: Added Step 0 requiring agent to state target file and problem understanding before acting.
   evidence:
     git:
-      commit: "39d7a6c8468e96e7ab2cb8522022863129b41a15"
-      subject: "feat: add Step 0 announce on skill invocation"
+      commit: 39d7a6c8468e96e7ab2cb8522022863129b41a15
+      subject: 'feat: add Step 0 announce on skill invocation'

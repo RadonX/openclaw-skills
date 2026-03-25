@@ -1,19 +1,19 @@
+---
 - id: D0001
-  date: "2026-03-18"
-  model: ""
-  decision: "feat: add cloudflare-browser-rendering skill"
-  summary: "Initial skill creation; fetches JS-rendered pages via Cloudflare Browser Rendering API with support for /content, /markdown, /screenshot, /pdf, /links; includes fetch_and_extract.py and api-params.md reference."
+  date: '2026-03-18'
+  model: 
+  decision: 'feat: add cloudflare-browser-rendering skill'
+  summary: Initial skill creation; fetches JS-rendered pages via Cloudflare Browser Rendering API with support for /content, /markdown, /screenshot, /pdf, /links; includes fetch_and_extract.py and api-params.md reference.
   evidence:
     git:
-      commit: "3eb18aaeffe2860dfd8710686f5ccdaa8712580d"
-      subject: "feat: add cloudflare-browser-rendering skill"
-
+      commit: 3eb18aaeffe2860dfd8710686f5ccdaa8712580d
+      subject: 'feat: add cloudflare-browser-rendering skill'
 - id: D0002
-  date: "2026-03-18"
-  model: ""
-  decision: "fix: default to /markdown endpoint"
-  summary: "Changed default endpoint from /content to /markdown for cleaner output without requiring HTML parsing."
+  date: '2026-03-18'
+  model: 
+  decision: 'fix: default to /markdown endpoint'
+  summary: Changed default endpoint from /content to /markdown for cleaner output without requiring HTML parsing.
   evidence:
     git:
-      commit: "279bb0f49c2a7ec0b6d8e36a086c2b3e3abf880d"
-      subject: "fix: default to /markdown endpoint (cleaner output, no HTML parsing needed)"
+      commit: 279bb0f49c2a7ec0b6d8e36a086c2b3e3abf880d
+      subject: 'fix: default to /markdown endpoint (cleaner output, no HTML parsing needed)'

@@ -1,9 +1,10 @@
+---
 - id: D0001
-  date: "2026-02-04"
-  model: ""
-  decision: "feat(commit-message): add Conventional Commit narrative helper skill"
-  summary: "Created initial skill for drafting Conventional Commit messages from git diffs and chat context with proposal-only workflow."
+  date: '2026-02-04'
+  model: gemini-2.5-pro
+  decision: 'feat(commit-message): add Conventional Commit narrative helper skill'
+  summary: Created initial skill for drafting Conventional Commit messages from git diffs and chat context with proposal-only workflow.
   evidence:
     git:
-      commit: "7b3ac964966c964223d516756d0da484d25e8ab9"
-      subject: "feat(commit-message): add Conventional Commit narrative helper skill"
+      commit: 7b3ac964966c964223d516756d0da484d25e8ab9
+      subject: 'feat(commit-message): add Conventional Commit narrative helper skill'

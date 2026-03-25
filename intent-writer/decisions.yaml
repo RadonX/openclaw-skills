@@ -1,9 +1,10 @@
+---
 - id: D0001
-  date: "2026-03-18"
-  model: ""
-  decision: "feat(intent-writer): add skill files"
-  summary: "Initial skill creation; zero-arg, proposal-only, no questions by default, output fixed to minimal INTENT.md format."
+  date: '2026-03-18'
+  model: 
+  decision: 'feat(intent-writer): add skill files'
+  summary: Initial skill creation; zero-arg, proposal-only, no questions by default, output fixed to minimal INTENT.md format.
   evidence:
     git:
-      commit: "6587044cec254ab516c079510aa9ddcb7de0d076"
-      subject: "feat(intent-writer): add skill files"
+      commit: 6587044cec254ab516c079510aa9ddcb7de0d076
+      subject: 'feat(intent-writer): add skill files'

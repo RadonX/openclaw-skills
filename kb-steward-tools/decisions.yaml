@@ -1,7 +1,7 @@
 ---
 - id: D0001
   date: '2026-02-21'
-  model: ''
+  model: gemini-2.5-pro
   decision: 'feat(kb-steward): Add kb-steward-companion skill'
   summary: Initial release with CLI scripts (todo.sh, tags.sh, status.sh, prio.sh) for task management in Obsidian vault.
   evidence:
@@ -10,7 +10,7 @@
       subject: 'feat(kb-steward): Add kb-steward-companion skill (#2)'
 - id: D0002
   date: '2026-02-21'
-  model: ''
+  model: gemini-2.5-pro
   decision: 'refactor(kb-steward-companion): Improve portability and add comprehensive documentation'
   summary: Removed hardcoded vault paths; auto-discover from obsidian-cli; added references/ and README.md.
   evidence:
@@ -19,7 +19,7 @@
       subject: 'refactor(kb-steward-companion): Improve portability and add comprehensive documentation'
 - id: D0003
   date: '2026-02-22'
-  model: ''
+  model: gemini-2.5-pro
   decision: 'docs(kb-steward-companion): Clarify relationship with kb-steward and add delete utility'
   summary: Clarified scope boundary (kb-steward writes, companion queries); added delete.sh with .bak safety.
   evidence:
@@ -28,7 +28,7 @@
       subject: 'docs(kb-steward-companion): Clarify relationship with kb-steward and add delete utility'
 - id: D0004
   date: '2026-02-23'
-  model: ''
+  model: gemini-2.5-pro
   decision: 'refactor(kb-steward): Rename folder from kb-steward-companion to kb-steward-tools'
   summary: Renamed skill directory to kb-steward-tools for clearer, simpler naming.
   evidence:
@@ -37,7 +37,7 @@
       subject: 'refactor(kb-steward): Rename folder from kb-steward-companion to kb-steward-tools'
 - id: D0005
   date: '2026-02-23'
-  model: ''
+  model: gemini-2.5-pro
   decision: 'refactor(kb-steward-companion): Rename to kb-steward-tools and simplify docs'
   summary: Renamed skill to kb-steward-tools for clearer naming; simplified README and SKILL.md.
   evidence:
@@ -46,7 +46,7 @@
       subject: 'refactor(kb-steward-companion): Rename to kb-steward-tools and simplify docs'
 - id: D0006
   date: '2026-03-09'
-  model: ''
+  model: gemini-2.5-pro
   decision: 'feat(kb-steward): support directory structure v2.0'
   summary: Added layered project structure (10-Projects/active|completed|backlog|templates); updated SKILL.md and added DIRECTORY_STRUCTURE_V2.md.
   evidence:
@@ -55,7 +55,7 @@
       subject: 'feat(kb-steward): support directory structure v2.0'
 - id: D0007
   date: '2026-03-09'
-  model: ''
+  model: gemini-2.5-pro
   decision: 'refactor(kb-steward): deduplicate directory structure docs'
   summary: Consolidated to single core spec; created TOOLS_V2_EXTENSION.md for tool-specific usage; removed duplicate docs.
   evidence:
@@ -64,7 +64,7 @@
       subject: 'refactor(kb-steward): deduplicate directory structure docs'
 - id: D0008
   date: '2026-03-09'
-  model: ''
+  model: gemini-2.5-pro
   decision: 'refactor(kb-steward): remove v2 suffix from directory structure docs'
   summary: Renamed DIRECTORY_STRUCTURE_V2.md → DIRECTORY_STRUCTURE.md; removed temporal version suffixes.
   evidence:
@@ -73,7 +73,7 @@
       subject: 'refactor(kb-steward): remove v2 suffix from directory structure docs'
 - id: D0009
   date: '2026-03-09'
-  model: ''
+  model: gemini-2.5-pro
   decision: 'feat(kb-steward-companion): add tag.sh script'
   summary: Added tag.sh for YAML tag management in notes using yq (--add, --remove, --list).
   evidence:

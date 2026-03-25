@@ -1,29 +1,28 @@
+---
 - id: D0001
-  date: "2026-02-08"
-  model: ""
-  decision: "feat(skill-distiller): add meta-skill for synthesizing skills from history"
-  summary: "Initial implementation codifying the process used to create the handoff skill; SKILL.md as router with core logic in references/PRINCIPLES.md."
+  date: '2026-02-08'
+  model: gpt-5.2
+  decision: 'feat(skill-distiller): add meta-skill for synthesizing skills from history'
+  summary: Initial implementation codifying the process used to create the handoff skill; SKILL.md as router with core logic in references/PRINCIPLES.md.
   evidence:
     git:
-      commit: "7e37dea9ab8beace8f03b900a03d6552fb8913f4"
-      subject: "feat(skill-distiller): add meta-skill for synthesizing skills from history"
-
+      commit: 7e37dea9ab8beace8f03b900a03d6552fb8913f4
+      subject: 'feat(skill-distiller): add meta-skill for synthesizing skills from history'
 - id: D0002
-  date: "2026-02-10"
-  model: ""
-  decision: "feat(skill-distiller): distill skills from history (archive gemini draft)"
-  summary: "Refined skill-distiller with progressive disclosure approach; preserved prior Gemini iteration as skill-distiller-gemini for comparison."
+  date: '2026-02-10'
+  model: gpt-5.2
+  decision: 'feat(skill-distiller): distill skills from history (archive gemini draft)'
+  summary: Refined skill-distiller with progressive disclosure approach; preserved prior Gemini iteration as skill-distiller-gemini for comparison.
   evidence:
     git:
-      commit: "6e9b6ff97a123ba31091720922d2927a59ffc9d3"
-      subject: "feat(skill-distiller): distill skills from history (archive gemini draft)"
-
+      commit: 6e9b6ff97a123ba31091720922d2927a59ffc9d3
+      subject: 'feat(skill-distiller): distill skills from history (archive gemini draft)'
 - id: D0003
-  date: "2026-02-10"
-  model: ""
-  decision: "docs(skill-distiller): add installer-facing README for skill selection"
-  summary: "Added documentation for when to install skill-distiller vs skill-distiller-gemini and recommended symlink-per-skill installation pattern."
+  date: '2026-02-10'
+  model: gpt-5.2
+  decision: 'docs(skill-distiller): add installer-facing README for skill selection'
+  summary: Added documentation for when to install skill-distiller vs skill-distiller-gemini and recommended symlink-per-skill installation pattern.
   evidence:
     git:
-      commit: "f5404e89c151312465cc2862bc079142a37b55df"
-      subject: "docs(skill-distiller): add installer-facing README for skill selection"
+      commit: f5404e89c151312465cc2862bc079142a37b55df
+      subject: 'docs(skill-distiller): add installer-facing README for skill selection'

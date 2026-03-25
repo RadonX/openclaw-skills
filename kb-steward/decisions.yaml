@@ -1,59 +1,55 @@
+---
 - id: D0001
-  date: "2026-02-11"
-  model: ""
-  decision: "feat(skills): add kb-steward — per-agent Obsidian KB manager"
-  summary: "Initial skill with smart discovery, additive-only intake, minimal chat noise; distilled from successful intake session in topic:1214."
+  date: '2026-02-11'
+  model: gemini-2.5-pro
+  decision: 'feat(skills): add kb-steward — per-agent Obsidian KB manager'
+  summary: Initial skill with smart discovery, additive-only intake, minimal chat noise; distilled from successful intake session in topic:1214.
   evidence:
     git:
-      commit: "e01730bc8bf3df28352af592310ea2e13ded667c"
-      subject: "feat(skills): add kb-steward — per-agent Obsidian KB manager"
-
+      commit: e01730bc8bf3df28352af592310ea2e13ded667c
+      subject: 'feat(skills): add kb-steward — per-agent Obsidian KB manager'
 - id: D0002
-  date: "2026-02-11"
-  model: ""
-  decision: "docs(kb-steward): add README and CONTRIBUTING"
-  summary: "Added user-facing README (quick start, folder structure, philosophy) and maintainer CONTRIBUTING (architecture, design principles, testing checklist)."
+  date: '2026-02-11'
+  model: gemini-2.5-pro
+  decision: 'docs(kb-steward): add README and CONTRIBUTING'
+  summary: Added user-facing README (quick start, folder structure, philosophy) and maintainer CONTRIBUTING (architecture, design principles, testing checklist).
   evidence:
     git:
-      commit: "51d184ef36561faa786c17711e1e8e3d1096a5b5"
-      subject: "docs(kb-steward): add README and CONTRIBUTING"
-
+      commit: 51d184ef36561faa786c17711e1e8e3d1096a5b5
+      subject: 'docs(kb-steward): add README and CONTRIBUTING'
 - id: D0003
-  date: "2026-02-13"
-  model: ""
-  decision: "kb-steward: default kbRoot to workspace/knowledge"
-  summary: "Changed default kbRoot from a hardcoded path to <workspace>/knowledge for per-agent isolation."
+  date: '2026-02-13'
+  model: gemini-2.5-pro
+  decision: 'kb-steward: default kbRoot to workspace/knowledge'
+  summary: Changed default kbRoot from a hardcoded path to <workspace>/knowledge for per-agent isolation.
   evidence:
     git:
-      commit: "c93e44e62b74f5e357e16abb7a8805d0201e87a7"
-      subject: "kb-steward: default kbRoot to <workspace>/knowledge"
-
+      commit: c93e44e62b74f5e357e16abb7a8805d0201e87a7
+      subject: 'kb-steward: default kbRoot to <workspace>/knowledge'
 - id: D0004
-  date: "2026-03-09"
-  model: ""
-  decision: "feat(kb-steward): support directory structure v2.0"
-  summary: "Introduced layered project structure (10-Projects/active|completed|backlog|templates); add creates PROJECT.md + tasks/ + references/; backward compatible."
+  date: '2026-03-09'
+  model: gemini-2.5-pro
+  decision: 'feat(kb-steward): support directory structure v2.0'
+  summary: Introduced layered project structure (10-Projects/active|completed|backlog|templates); add creates PROJECT.md + tasks/ + references/; backward compatible.
   evidence:
     git:
-      commit: "f046a3982ec0f53430a41f062948eafad3566197"
-      subject: "feat(kb-steward): support directory structure v2.0"
-
+      commit: f046a3982ec0f53430a41f062948eafad3566197
+      subject: 'feat(kb-steward): support directory structure v2.0'
 - id: D0005
-  date: "2026-03-09"
-  model: ""
-  decision: "refactor(kb-steward): deduplicate directory structure docs"
-  summary: "Consolidated to single core spec; created KB_STEWARD_EXTENSION.md; removed duplicate docs."
+  date: '2026-03-09'
+  model: gemini-2.5-pro
+  decision: 'refactor(kb-steward): deduplicate directory structure docs'
+  summary: Consolidated to single core spec; created KB_STEWARD_EXTENSION.md; removed duplicate docs.
   evidence:
     git:
-      commit: "0e9f963831085365b0924ba62707a446c047885d"
-      subject: "refactor(kb-steward): deduplicate directory structure docs"
-
+      commit: 0e9f963831085365b0924ba62707a446c047885d
+      subject: 'refactor(kb-steward): deduplicate directory structure docs'
 - id: D0006
-  date: "2026-03-09"
-  model: ""
-  decision: "refactor(kb-steward): remove v2 suffix from directory structure docs"
-  summary: "Renamed DIRECTORY_STRUCTURE_V2.md → DIRECTORY_STRUCTURE.md; removed temporal version suffixes as this is now the current standard."
+  date: '2026-03-09'
+  model: gemini-2.5-pro
+  decision: 'refactor(kb-steward): remove v2 suffix from directory structure docs'
+  summary: Renamed DIRECTORY_STRUCTURE_V2.md → DIRECTORY_STRUCTURE.md; removed temporal version suffixes as this is now the current standard.
   evidence:
     git:
-      commit: "aa7dd3c41299805dc8d15e74c5f3e6b80f736243"
-      subject: "refactor(kb-steward): remove v2 suffix from directory structure docs"
+      commit: aa7dd3c41299805dc8d15e74c5f3e6b80f736243
+      subject: 'refactor(kb-steward): remove v2 suffix from directory structure docs'

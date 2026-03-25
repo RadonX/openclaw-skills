@@ -1,9 +1,10 @@
+---
 - id: D0001
-  date: "2026-02-10"
-  model: ""
-  decision: "feat(skills): add source-to-notes (dialogue export + optional distill)"
-  summary: "Initial skill creation for exporting session history to dialogue materials and lightweight notes with optional distillation."
+  date: '2026-02-10'
+  model: gemini-2.5-pro
+  decision: 'feat(skills): add source-to-notes (dialogue export + optional distill)'
+  summary: Initial skill creation for exporting session history to dialogue materials and lightweight notes with optional distillation.
   evidence:
     git:
-      commit: "8ca5314fed16b08073bcff4cd186872fa712e37b"
-      subject: "feat(skills): add source-to-notes (dialogue export + optional distill)"
+      commit: 8ca5314fed16b08073bcff4cd186872fa712e37b
+      subject: 'feat(skills): add source-to-notes (dialogue export + optional distill)'
