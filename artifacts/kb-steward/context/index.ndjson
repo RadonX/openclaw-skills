@@ -1,0 +1,1 @@
+{"path": "artifacts/kb-steward/context/episodes/2026-02-14_session-fd5415f8d2.md", "date": "2026-02-14", "session_opaque": "fd5415f8d2", "episode_type": "evolution", "trust": "verified", "flags": [], "commits": ["c93e44e62b74", "51d184ef3656", "e01730bc8bf3"], "models_observed": ["openai-codex/gpt-5.2", "gemini-local/gemini-2.5-flash", "gemini-local/gemini-2.5-pro"]}
