@@ -1,6 +1,6 @@
 # Initial Setup Guide
 
-First-time configuration for `obsidian-cli` to work with `kb-steward-companion`.
+First-time configuration for `obsidian-cli` to work with `kb-steward-tools`.
 
 ## About this companion
 

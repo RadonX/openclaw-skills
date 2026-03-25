@@ -1,8 +1,8 @@
 name: kb-steward-tools
-version: "0.2.0"
+version: "0.3.1"
 status: utility
 owner: RadonX
-created: "2026-02-23"
+created: "2026-02-21"
 updated: "2026-03-22"
 
 description: "Query and maintenance utilities for kb-steward managed Obsidian vaults. Scripts: todo.sh, tags.sh, status.sh, prio.sh, tag.sh. Utility toolset: kb-steward writes/ingests, these tools query/maintain."
