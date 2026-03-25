@@ -6,6 +6,10 @@
   evidence:
     git:
       commit: d03beb0dccf5b517e1b7c0d065fc70c6b7a5645c
+    artifacts:
+      episodes:
+      - path: artifacts/github-issue-methodology/context/episodes/2026-03-02_git-only.md
+        trust: verified
 - id: D0002
   date: '2026-03-02'
   decision: 'Refactor: github-issue-methodology to follow OpenClaw skill conventions'
@@ -13,3 +17,7 @@
   evidence:
     git:
       commit: a3ce281d5c5057ed3028e992f9278f6e22db53e6
+    artifacts:
+      episodes:
+      - path: artifacts/github-issue-methodology/context/episodes/2026-03-02_git-only.md
+        trust: verified

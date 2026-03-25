@@ -6,3 +6,7 @@
   evidence:
     git:
       commit: 8ca5314fed16b08073bcff4cd186872fa712e37b
+    artifacts:
+      episodes:
+      - path: artifacts/source-to-notes/context/episodes/2026-02-10_git-only.md
+        trust: verified

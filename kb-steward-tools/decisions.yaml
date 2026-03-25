@@ -7,6 +7,10 @@
     git:
       commit: 50656dfd10b3e74c82cb413aaef69bd278d464c3
       subject: 'feat(kb-steward): Add kb-steward-companion skill (#2)'
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-companion/context/episodes/2026-02-21_git-only.md
+        trust: verified
 - id: D0002
   date: '2026-02-21'
   decision: 'refactor(kb-steward-companion): Improve portability and add comprehensive documentation'
@@ -14,6 +18,10 @@
   evidence:
     git:
       commit: 9d878a95c306a5043fdb1fa0d16cd450b2b6faa4
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-companion/context/episodes/2026-02-21_git-only.md
+        trust: verified
 - id: D0003
   date: '2026-02-22'
   decision: 'docs(kb-steward-companion): Clarify relationship with kb-steward and add delete utility'
@@ -21,6 +29,10 @@
   evidence:
     git:
       commit: d7399bf4b7b0abb1f8bf6e7ca766284bd20817fb
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-companion/context/episodes/2026-02-21_git-only.md
+        trust: verified
 - id: D0004
   date: '2026-02-23'
   decision: 'refactor(kb-steward): Rename folder from kb-steward-companion to kb-steward-tools'
@@ -28,6 +40,12 @@
   evidence:
     git:
       commit: 5d3191ac43f7efd2e5dcd7571626b09741e2d909
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-companion/context/episodes/2026-02-21_git-only.md
+        trust: verified
+      - path: artifacts/kb-steward-tools/context/episodes/2026-02-23_git-only.md
+        trust: verified
 - id: D0005
   date: '2026-02-23'
   decision: 'refactor(kb-steward-companion): Rename to kb-steward-tools and simplify docs'
@@ -35,6 +53,10 @@
   evidence:
     git:
       commit: 6fd35140d4d00a9551094eedfcdd2ecc5a399d94
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-companion/context/episodes/2026-02-21_git-only.md
+        trust: verified
 - id: D0006
   date: '2026-03-09'
   decision: 'feat(kb-steward): support directory structure v2.0'
@@ -42,6 +64,10 @@
   evidence:
     git:
       commit: f046a3982ec0f53430a41f062948eafad3566197
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-tools/context/episodes/2026-02-23_git-only.md
+        trust: verified
 - id: D0007
   date: '2026-03-09'
   decision: 'refactor(kb-steward): deduplicate directory structure docs'
@@ -49,6 +75,10 @@
   evidence:
     git:
       commit: 0e9f963831085365b0924ba62707a446c047885d
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-tools/context/episodes/2026-02-23_git-only.md
+        trust: verified
 - id: D0008
   date: '2026-03-09'
   decision: 'refactor(kb-steward): remove v2 suffix from directory structure docs'
@@ -56,6 +86,10 @@
   evidence:
     git:
       commit: aa7dd3c41299805dc8d15e74c5f3e6b80f736243
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-tools/context/episodes/2026-02-23_git-only.md
+        trust: verified
 - id: D0009
   date: '2026-03-09'
   decision: 'feat(kb-steward-companion): add tag.sh script'
@@ -63,3 +97,7 @@
   evidence:
     git:
       commit: cceead63524fb6e7131e09f0fef7e547295fe685
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-companion/context/episodes/2026-02-21_git-only.md
+        trust: verified

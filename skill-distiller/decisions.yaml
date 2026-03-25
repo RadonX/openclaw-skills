@@ -7,6 +7,10 @@
   evidence:
     git:
       commit: 7e37dea9ab8beace8f03b900a03d6552fb8913f4
+    artifacts:
+      episodes:
+      - path: artifacts/skill-distiller/context/episodes/2026-02-08_git-only.md
+        trust: verified
 - id: D0002
   date: '2026-02-10'
   model: gpt-5.2
@@ -15,6 +19,12 @@
   evidence:
     git:
       commit: 6e9b6ff97a123ba31091720922d2927a59ffc9d3
+    artifacts:
+      episodes:
+      - path: artifacts/skill-distiller-gemini/context/episodes/2026-02-10_git-only.md
+        trust: verified
+      - path: artifacts/skill-distiller/context/episodes/2026-02-08_git-only.md
+        trust: verified
 - id: D0003
   date: '2026-02-10'
   model: gpt-5.2
@@ -23,3 +33,7 @@
   evidence:
     git:
       commit: f5404e89c151312465cc2862bc079142a37b55df
+    artifacts:
+      episodes:
+      - path: artifacts/skill-distiller/context/episodes/2026-02-08_git-only.md
+        trust: verified

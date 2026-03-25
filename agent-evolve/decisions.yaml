@@ -6,6 +6,10 @@
   evidence:
     git:
       commit: 97ca17525e0fe3f3033426824be9aaa5914f2b9b
+    artifacts:
+      episodes:
+      - path: artifacts/agent-evolve/context/episodes/2026-03-12_session-dedfa4c11d.md
+        trust: verified
 - id: D0002
   date: '2026-03-19'
   decision: 'fix: correct default target files list'
@@ -14,6 +18,10 @@
     git:
       commit: 10475d3b6f436f560bd53323ff365e1d4f788b05
       subject: 'fix: correct default target files list (HEARTBEAT.md is not a persona file)'
+    artifacts:
+      episodes:
+      - path: artifacts/agent-evolve/context/episodes/2026-03-12_session-dedfa4c11d.md
+        trust: verified
 - id: D0003
   date: '2026-03-19'
   decision: 'feat: add Step 0 announce on skill invocation'
@@ -21,3 +29,7 @@
   evidence:
     git:
       commit: 39d7a6c8468e96e7ab2cb8522022863129b41a15
+    artifacts:
+      episodes:
+      - path: artifacts/agent-evolve/context/episodes/2026-03-12_session-dedfa4c11d.md
+        trust: verified

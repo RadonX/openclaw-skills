@@ -28,6 +28,10 @@
   evidence:
     git:
       commit: f046a3982ec0f53430a41f062948eafad3566197
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-tools/context/episodes/2026-02-23_git-only.md
+        trust: verified
 - id: D0005
   date: '2026-03-09'
   decision: 'refactor(kb-steward): deduplicate directory structure docs'
@@ -35,6 +39,10 @@
   evidence:
     git:
       commit: 0e9f963831085365b0924ba62707a446c047885d
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-tools/context/episodes/2026-02-23_git-only.md
+        trust: verified
 - id: D0006
   date: '2026-03-09'
   decision: 'refactor(kb-steward): remove v2 suffix from directory structure docs'
@@ -42,3 +50,7 @@
   evidence:
     git:
       commit: aa7dd3c41299805dc8d15e74c5f3e6b80f736243
+    artifacts:
+      episodes:
+      - path: artifacts/kb-steward-tools/context/episodes/2026-02-23_git-only.md
+        trust: verified

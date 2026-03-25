@@ -6,3 +6,7 @@
   evidence:
     git:
       commit: aa36bf5f29c95fbe1e963b9bf2852974e0cf6c2e
+    artifacts:
+      episodes:
+      - path: artifacts/bindings-simplifier/context/episodes/2026-02-23_git-only.md
+        trust: verified

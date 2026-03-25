@@ -6,6 +6,10 @@
   evidence:
     git:
       commit: 3eb18aaeffe2860dfd8710686f5ccdaa8712580d
+    artifacts:
+      episodes:
+      - path: artifacts/cloudflare-browser-rendering/context/episodes/2026-03-18_git-only.md
+        trust: verified
 - id: D0002
   date: '2026-03-18'
   decision: 'fix: default to /markdown endpoint'
@@ -14,3 +18,7 @@
     git:
       commit: 279bb0f49c2a7ec0b6d8e36a086c2b3e3abf880d
       subject: 'fix: default to /markdown endpoint (cleaner output, no HTML parsing needed)'
+    artifacts:
+      episodes:
+      - path: artifacts/cloudflare-browser-rendering/context/episodes/2026-03-18_git-only.md
+        trust: verified

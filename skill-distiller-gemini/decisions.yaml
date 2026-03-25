@@ -6,3 +6,9 @@
   evidence:
     git:
       commit: 6e9b6ff97a123ba31091720922d2927a59ffc9d3
+    artifacts:
+      episodes:
+      - path: artifacts/skill-distiller-gemini/context/episodes/2026-02-10_git-only.md
+        trust: verified
+      - path: artifacts/skill-distiller/context/episodes/2026-02-08_git-only.md
+        trust: verified
