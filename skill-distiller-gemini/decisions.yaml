@@ -1,10 +1,8 @@
 ---
 - id: D0001
   date: '2026-02-10'
-  model: gemini-2.5-pro
   decision: 'feat(skill-distiller): distill skills from history (archive gemini draft)'
   summary: Initial skill-distiller creation; turns successful conversations into reusable skills via progressive disclosure.
   evidence:
     git:
       commit: 6e9b6ff97a123ba31091720922d2927a59ffc9d3
-      subject: 'feat(skill-distiller): distill skills from history (archive gemini draft)'

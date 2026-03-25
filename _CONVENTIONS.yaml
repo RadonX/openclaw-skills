@@ -1,37 +1,39 @@
-# Skills metadata conventions (palimpsest-like)
-#
-# Goals:
-# - Track key decisions (decision log) and the model used to create/change a skill.
-# - Keep metadata machine-readable (YAML).
-
+---
 files:
   meta: meta.yaml
   decisions: decisions.yaml
-
 meta_yaml:
   required_keys:
-    - name
-    - version
-    - status
-    - owner
-    - created
-    - updated
-    - contract
-
+  - name
+  - version
+  - status
+  - owner
+  - created
+  - updated
+  - contract
   notes:
-    contract: "List of invariant constraints for the skill; minimal and stable."
-    "Model tracking": "Model attribution is recorded per-commit in decisions.yaml, not in meta.yaml."
-
+    contract: List of invariant constraints for the skill; minimal and stable.
+    Model tracking: Model attribution is recorded per-commit in decisions.yaml, not in meta.yaml.
 decisions_yaml:
-  record_when: "Important interface/contract/behavior changes only."
+  record_when: Important interface/contract/behavior changes only.
   entry_shape:
     required_keys:
-      - id
-      - date
-      - model
-      - decision
-      - context
+    - id
+    - date
+    - model
+    - decision
+    - context
     optional_keys:
-      - alternatives
-      - consequences
-      - links
+    - alternatives
+    - consequences
+    - links
+decisions:
+  model_defaults:
+    before: '2026-03-13'
+    value: gemini-2.5-pro
+  model_overrides:
+  - skill: skill-distiller
+    value: gpt-5.2
+  notes:
+  - decisions.yaml entries may omit model; consumers should apply model_defaults/model_overrides to infer.
+  - evidence.git.subject is optional; include only when it adds information beyond decision.

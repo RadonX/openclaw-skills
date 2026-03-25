@@ -1,10 +1,8 @@
 ---
 - id: D0001
   date: '2026-02-23'
-  model: gemini-2.5-pro
   decision: 'feat(bindings): Add bindings-simplifier skill'
   summary: Created new skill to simplify OpenClaw bindings configuration by eliminating redundancy while preserving functionality; includes dry-run mode and reference docs.
   evidence:
     git:
       commit: aa36bf5f29c95fbe1e963b9bf2852974e0cf6c2e
-      subject: 'feat(bindings): Add bindings-simplifier skill'

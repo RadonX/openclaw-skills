@@ -1,19 +1,15 @@
 ---
 - id: D0001
   date: '2026-03-02'
-  model: gemini-2.5-pro
   decision: 'Add skill: github-issue-methodology'
   summary: Created initial comprehensive methodology for addressing GitHub issues; distilled from real-world contribution experience with focus on autonomous research, test exploration, and rapid shipping.
   evidence:
     git:
       commit: d03beb0dccf5b517e1b7c0d065fc70c6b7a5645c
-      subject: 'Add skill: github-issue-methodology'
 - id: D0002
   date: '2026-03-02'
-  model: gemini-2.5-pro
   decision: 'Refactor: github-issue-methodology to follow OpenClaw skill conventions'
   summary: Restructured as command-based skill with YAML frontmatter, interface syntax, and references/ subdirectory; followed patterns established by kb-steward.
   evidence:
     git:
       commit: a3ce281d5c5057ed3028e992f9278f6e22db53e6
-      subject: 'Refactor: github-issue-methodology to follow OpenClaw skill conventions'

@@ -1,34 +1,27 @@
 ---
 - id: D0001
   date: '2026-02-04'
-  model: gemini-2.5-pro
   decision: Initial skills repo (handoff)
   summary: First commit establishing the handoff skill in the skills repo.
   evidence:
     git:
       commit: fecdfea7183c5aa822ef3c1c1d8eb018adeaad2c
-      subject: Initial skills repo (handoff)
 - id: D0002
   date: '2026-02-04'
-  model: gemini-2.5-pro
   decision: 'feat(handoff): adopt a subcommand-first CLI with smart new/update'
   summary: Reshaped /handoff into orthogonal CLI (new/update/know/load) with smart default choosing between new vs update; introduced --ask flag for extra confirmations.
   evidence:
     git:
       commit: bc5692f7c2f1c7072bff3d0c4d93c8985035ac4a
-      subject: 'feat(handoff): adopt a subcommand-first CLI with smart new/update'
 - id: D0003
   date: '2026-02-04'
-  model: gemini-2.5-pro
   decision: 'refactor(handoff): move mode details into references (keep SKILL.md lean)'
   summary: Moved workflow details to references/ (DEFAULT.md, KNOW.md, PRINCIPLES.md); SKILL.md now acts as router only.
   evidence:
     git:
       commit: 864c5d354fd27a11cbe4270b1ae099e3dd5765f1
-      subject: 'refactor(handoff): move mode details into references (keep SKILL.md lean)'
 - id: D0004
   date: '2026-02-04'
-  model: gemini-2.5-pro
   decision: 'feat(handoff): implement load as context primer'
   summary: Upgraded load to read-only context primer; resolves handoff path from project name, reads linked knowledge/playbooks.
   evidence:
@@ -37,16 +30,13 @@
       subject: 'feat(handoff): implement load as context primer (handoff + linked docs)'
 - id: D0005
   date: '2026-02-04'
-  model: gemini-2.5-pro
   decision: 'refactor(handoff): streamline load + add help + human README'
   summary: load now accepts project name only (Telegram-friendly); added /handoff help via HELP.md and human-facing README.
   evidence:
     git:
       commit: 905f0e57d1f054fbc27e2e053fd70b10b55c3b1a
-      subject: 'refactor(handoff): streamline load + add help + human README'
 - id: D0006
   date: '2026-03-22'
-  model: 
   decision: 'chore: add handoff/docs'
   summary: Added docs directory to handoff skill.
   evidence:
