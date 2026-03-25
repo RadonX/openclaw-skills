@@ -3,7 +3,7 @@
   date: '2026-02-11'
   model: gemini-2.5-pro
   decision: 'feat(skills): add kb-steward — per-agent Obsidian KB manager'
-  summary: Initial skill with smart discovery, additive-only intake, minimal chat noise; distilled from successful intake session in topic:1214.
+  summary: Initial skill with smart discovery, additive-only intake, and minimal chat noise.
   evidence:
     git:
       commit: e01730bc8bf3df28352af592310ea2e13ded667c
